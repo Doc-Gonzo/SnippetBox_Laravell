@@ -35,3 +35,8 @@ Route::post('/addSammlung/', 'SammlungController@create');
 Route::get('/addSammlung/',  function () {
     return view('addSammlung');
 });
+
+Route::post('/addSnippet/', 'SnippetController@create');
+Route::get('/addSnippet/',  function () {
+    return view('addSnippet');
+});
