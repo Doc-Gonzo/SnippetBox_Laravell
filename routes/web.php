@@ -20,3 +20,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/addContext/', 'ContextController@create');
+Route::get('/addContext/',  function () {
+    return view('addContext');
+});
