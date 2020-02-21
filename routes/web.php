@@ -30,3 +30,8 @@ Route::post('/addLanguage/', 'LanguageController@create');
 Route::get('/addLanguage/',  function () {
     return view('addLanguage');
 });
+
+Route::post('/addSammlung/', 'SammlungController@create');
+Route::get('/addSammlung/',  function () {
+    return view('addSammlung');
+});

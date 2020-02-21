@@ -19,4 +19,5 @@
         {{ csrf_field() }}
         <button type="submit">Abschicken</button>
     </form>
+
 @endsection

@@ -39,4 +39,7 @@ class User extends Authenticatable
     public function snippet(){
         return $this->hasMany(Snippet::class);
     }
+    public function sammlung(){
+        return $this->hasMany(Sammlung::class);
+    }
 }
