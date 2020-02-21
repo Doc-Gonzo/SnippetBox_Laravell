@@ -10,5 +10,11 @@
         {{ csrf_field() }}
         <button type="submit">Abschicken</button>
     </form>
+    <!-- Liste ausgeben -->
+    <?php $contexts = \App\Context::all(); ?>
+    @foreach($contexts as $context)
+        <li class="context"><b>{{$context->name}}</li>
+    @endforeach
+
 
 @endsection

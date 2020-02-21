@@ -25,3 +25,8 @@ Route::post('/addContext/', 'ContextController@create');
 Route::get('/addContext/',  function () {
     return view('addContext');
 });
+
+Route::post('/addLanguage/', 'LanguageController@create');
+Route::get('/addLanguage/',  function () {
+    return view('addLanguage');
+});

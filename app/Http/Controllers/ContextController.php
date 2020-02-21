@@ -16,4 +16,9 @@ class ContextController extends Controller
         // Leite auf Home weiter
         return redirect('/addContext');
     }
+    public function getAllContexts(){
+        $contexts = Context::all();
+
+        return $contexts;
+    }
 }
