@@ -14,7 +14,9 @@
                     @endauth
                 </div>
             @endif
-
+            <div id="app">
+                <menu_main></menu_main>
+            </div>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
@@ -32,5 +34,6 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>

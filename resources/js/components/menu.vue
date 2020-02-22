@@ -5,6 +5,7 @@
             <li class="dropdown-item"><a href="/addLanguage">Sprache anlegen</a></li>
             <li class="dropdown-item"><a href="/addSammlung">Sammlung anlegen</a></li>
             <li class="dropdown-item"><a href="/addContext">Context anlegen</a></li>
+            <li class="dropdown-item"><a href="/getAllSnippets">API Get all Snippets</a></li>
         </ul>
     </div>
 

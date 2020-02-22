@@ -6,7 +6,13 @@
 
 <script>
     export default {
-        name: "snippet_list"
+        props: ['allSnippets','chosenLangs','allLangs'],
+        methods: {
+            getAllSnippets(){
+                axios.get('/getAllSnippets').then(response => {alert(response.data);
+                });
+            }
+        }
     }
 
 </script>

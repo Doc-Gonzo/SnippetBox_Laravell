@@ -1953,6 +1953,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "menu"
 });
@@ -1975,7 +1976,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "snippet_list"
+  props: ['allSnippets', 'chosenLangs', 'allLangs'],
+  methods: {
+    getAllSnippets: function getAllSnippets() {
+      axios.get('/getAllSnippets').then(function (response) {
+        alert(response.data);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -38072,6 +38080,12 @@ var staticRenderFns = [
         _c("li", { staticClass: "dropdown-item" }, [
           _c("a", { attrs: { href: "/addContext" } }, [
             _vm._v("Context anlegen")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "dropdown-item" }, [
+          _c("a", { attrs: { href: "/getAllSnippets" } }, [
+            _vm._v("API Get all Snippets")
           ])
         ])
       ])

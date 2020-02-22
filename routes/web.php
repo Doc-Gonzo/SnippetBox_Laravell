@@ -10,36 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/', function () {
+    return view('auth.login');
+})->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::post('/addContext/', 'ContextController@create');
+Route::post('/addContext/', 'ContextController@create')->middleware('auth');
 Route::get('/addContext/',  function () {
     return view('addContext');
-});
+})->middleware('auth');
 
-Route::post('/addLanguage/', 'LanguageController@create');
+Route::post('/addLanguage/', 'LanguageController@create')->middleware('auth');
 Route::get('/addLanguage/',  function () {
     return view('addLanguage');
-});
+})->middleware('auth');
 
-Route::post('/addSammlung/', 'SammlungController@create');
+Route::post('/addSammlung/', 'SammlungController@create')->middleware('auth');
 Route::get('/addSammlung/',  function () {
     return view('addSammlung');
-});
+})->middleware('auth');
 
-Route::post('/addSnippet/', 'SnippetController@create');
+Route::post('/addSnippet/', 'SnippetController@create')->middleware('auth');
 Route::get('/addSnippet/',  function () {
     return view('addSnippet');
-});
-Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets');
+})->middleware('auth');
+Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets')->middleware('auth');
 
 
