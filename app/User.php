@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function snippet(){
-        return $this->hasMany(Snippet::class);
+        return $this->hasMany(Snippet::class)->orderBy('coding_language_id', 'DESC');
     }
     public function sammlung(){
         return $this->hasMany(Sammlung::class);

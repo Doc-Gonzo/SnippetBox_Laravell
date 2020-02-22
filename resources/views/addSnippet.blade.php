@@ -11,7 +11,7 @@
 
     <?php $user = auth()->user() ?>
 
-    <form action="/addSnippet" method="post">
+    <form class="form-group" action="/addSnippet" method="post">
         <input type="text" name="name" placeholder="Name" class="snippet_name">
         <textarea  name="desc" placeholder="Beschreibung" class="snippet_desc"></textarea>
         <textarea  name="snippet_content" placeholder="Content" class="snippet_content"></textarea>
@@ -39,7 +39,7 @@
             <option value="1">Ja</option>
         </select>
         {{ csrf_field() }}
-        <button type="submit">Abschicken</button>
+        <button class="btn btn-dark" type="submit">Abschicken</button>
     </form>
 
 @endsection
