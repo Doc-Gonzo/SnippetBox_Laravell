@@ -1,11 +1,11 @@
 <template>
     <div class="main_nav_wrapper">
-        <ul class="main_nav dropdown-menu">
-            <li class="dropdown-item "><a href="/addSnippet">Snippet anlegen</a></li>
-            <li class="dropdown-item"><a href="/addLanguage">Sprache anlegen</a></li>
-            <li class="dropdown-item"><a href="/addSammlung">Sammlung anlegen</a></li>
-            <li class="dropdown-item"><a href="/addContext">Context anlegen</a></li>
-            <li class="dropdown-item"><a href="/getAllSnippets">API Get all Snippets</a></li>
+        <ul class="main_nav ">
+            <li class=""><a href="/addSnippet">Snippet anlegen</a></li>
+            <li class=""><a href="/addLanguage">Sprache anlegen</a></li>
+            <li class=""><a href="/addSammlung">Sammlung anlegen</a></li>
+            <li class=""><a href="/addContext">Context anlegen</a></li>
+            <li class=""><a href="/getAllSnippets">API Get all Snippets</a></li>
         </ul>
     </div>
 

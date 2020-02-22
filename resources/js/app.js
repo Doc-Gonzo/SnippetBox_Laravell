@@ -20,7 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('menu_main', require('./components/menu.vue').default);
+Vue.component('menu_main', require('./components/menu_main.vue').default);
 Vue.component('snippet_list', require('./components/snippet_list.vue').default);
 
 /**

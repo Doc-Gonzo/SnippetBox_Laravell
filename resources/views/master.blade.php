@@ -16,6 +16,7 @@
     @endif
     <div id="app">
        <menu_main></menu_main>
+
     </div>
 
     <div class="content">
@@ -23,6 +24,5 @@
         <div class="content_wrapper">@yield('content')</div>
     </div>
 </div>
-<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
