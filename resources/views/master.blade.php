@@ -17,7 +17,9 @@
     <div id="main_menu_wrapper">
        <menu_main></menu_main>
     </div>
-
+    <div id="menu_login">
+        @include('layouts/navbar')
+    </div>
     <div class="content">
         <div class="title m-b-md">@yield('headline')</div>
         <div class="content_wrapper">@yield('content')</div>
