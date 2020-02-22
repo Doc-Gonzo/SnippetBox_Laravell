@@ -21,4 +21,8 @@ class SnippetController extends Controller
         // Leite auf Home weiter
         return redirect('/addSnippet');
     }
+    public function getAllSnippets(){
+        $snippets = Snippet::all();
+        return $snippets;
+    }
 }

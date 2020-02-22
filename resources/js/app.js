@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('menu_main', require('./components/menu.vue').default);
+Vue.component('snippet_list', require('./components/snippet_list.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -40,3 +40,6 @@ Route::post('/addSnippet/', 'SnippetController@create');
 Route::get('/addSnippet/',  function () {
     return view('addSnippet');
 });
+Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets');
+
+
