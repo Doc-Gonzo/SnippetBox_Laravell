@@ -41,5 +41,4 @@
         {{ csrf_field() }}
         <button class="btn btn-dark ml-2" type="submit">Abschicken</button>
     </form>
-
 @endsection

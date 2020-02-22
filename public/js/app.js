@@ -1954,8 +1954,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "menu"
+  name: "menu_main",
+  data: function data() {
+    return {
+      add_snippet_text: 'Snippet anlegen',
+      add_snippet_link: '/addSnippet'
+    };
+  }
 });
 
 /***/ }),
@@ -6531,7 +6538,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main_nav_wrapper[data-v-39b5b25e] {\n    position: absolute;\n    width: 100%;\n    height: 40px;\n    background-color: #1b1e21;\n    left:0;\n    top:0;\n}\n.main_nav_wrapper ul[data-v-39b5b25e] {\n    margin-top: 0px;\n    padding-left: 0;\n}\n.main_nav_wrapper ul li a[data-v-39b5b25e] {\n\n    color: #fff;\n    padding: 10px 5px;\n    font-weight: bold;\n    text-decoration:none;\n    display: block;\n}\n.main_nav_wrapper ul li a[data-v-39b5b25e]:hover {\n    color: #2fa360;\n}\n.main_nav_wrapper ul li[data-v-39b5b25e] {\n    list-style: none;\n    display: inline-block;\n}\n", ""]);
+exports.push([module.i, "\n.main_nav_wrapper[data-v-39b5b25e] {\n    position: absolute;\n    width: 100%;\n    height: 46px;\n    background-color: #1b1e21;\n    left:0;\n    top:0;\n}\n.main_nav_wrapper ul[data-v-39b5b25e] {\n    margin-top: 0px;\n    padding-left: 0;\n}\n.main_nav_wrapper ul li a[data-v-39b5b25e] {\n    color: #fff;\n    padding: 9px 5px 8px 5px;\n    font-weight: bold;\n    text-decoration:none;\n    display: block;\n    transition: 0.4s;\n}\n.main_nav_wrapper ul li a[data-v-39b5b25e]:hover {\n    color: #2fa360;\n}\n.main_nav_wrapper ul li[data-v-39b5b25e] {\n    list-style: none;\n    display: inline-block;\n    position: relative;\n    border-bottom:3px solid transparent;\n    transition: 0.4s;\n}\n.main_nav_wrapper ul li[data-v-39b5b25e]:hover {\n    border-bottom:3px solid #2fa360;\n    transition: 0.4s;\n}\n", ""]);
 
 // exports
 
@@ -38046,53 +38053,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main_nav_wrapper" }, [
-      _c("ul", { staticClass: "main_nav " }, [
-        _c("li", {}, [
-          _c("a", { attrs: { href: "/addSnippet" } }, [
-            _vm._v("Snippet anlegen")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", {}, [
-          _c("a", { attrs: { href: "/addLanguage" } }, [
-            _vm._v("Sprache anlegen")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", {}, [
-          _c("a", { attrs: { href: "/addSammlung" } }, [
-            _vm._v("Sammlung anlegen")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", {}, [
-          _c("a", { attrs: { href: "/addContext" } }, [
-            _vm._v("Context anlegen")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", {}, [
-          _c("a", { attrs: { href: "/getAllSnippets" } }, [
-            _vm._v("API Get all Snippets")
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 
