@@ -4,12 +4,8 @@
 @section('headline', 'Testvue')
 @section('content')
 
-    <testvvue></testvvue>
+   <!-- <testvvue></testvvue> -->
+    <snippet_list></snippet_list>
 
 @endsection
-<script>
-    import Testvvue from "../js/components/testvvue";
-    export default {
-        components: {Testvvue}
-    }
-</script>
+

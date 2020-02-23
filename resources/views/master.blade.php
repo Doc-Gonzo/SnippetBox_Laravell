@@ -17,7 +17,7 @@
     @endif
     <div id="main_menu_wrapper">
        <main_auto></main_auto>
-        <snippet_list :allSnippets="'{{ \App\Sammlung::all() }}'"></snippet_list>
+
     </div>
     <div id="menu_login">
         @include('layouts/navbar')

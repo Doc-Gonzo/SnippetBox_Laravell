@@ -1,9 +1,9 @@
 <template>
     <div>
-        <b-button variant="primary">
-            Profile
-            <b-badge variant="light">9 <span class="sr-only">unread messages</span></b-badge>
-        </b-button>
+        <b-jumbotron header="Headline" lead="Bootstrap v4 Components for Vue.js 2">
+            <p>For more information visit website</p>
+            <b-button variant="primary" href="#">More Info</b-button>
+        </b-jumbotron>
     </div>
 </template>
 

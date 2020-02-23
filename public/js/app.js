@@ -1999,31 +1999,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'snippet_list',
-  props: ['allSnippets:', 'chosenLangs', 'allLangs'],
+  mounted: function mounted() {
+    var _this = this;
+
+    fetch('/getAllSnippets', {
+      method: 'get'
+    }).then(function (response) {
+      return response.json();
+    }).then(function (jsonData) {
+      _this.Snippets = jsonData;
+    });
+  },
   data: function data() {
     return {
-      Snippets: [{
-        id: '',
-        name: '',
-        desc: '',
-        snippet_content: '',
-        "public": '',
-        user_id: '',
-        coding_language: '',
-        sammlung_id: ''
-      }]
+      Snippets: []
     };
-  },
-  methods: {
-    getAllSnippets: function getAllSnippets() {
-      allSnippets = axios["default"]('/getAllSnippets');
-      return allSnippets;
-    },
-    addSnippetsToArray: function addSnippetsToArray(snippets) {
-      for (Snippets in snippets) {
-        Snippets.push(Snippets);
-      }
-    }
   }
 });
 
@@ -74888,8 +74878,19 @@ var render = function() {
     _c("div", [
       _c(
         "ul",
-        _vm._l(_vm.allSnippets, function(snippet) {
-          return _c("li", [_c("p", { attrs: { text: snippet } })])
+        _vm._l(_vm.Snippets, function(snippet) {
+          return _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "snippet_detail/" + snippet.id,
+                  title: snippet.name
+                }
+              },
+              [_vm._v(" " + _vm._s(snippet.name))]
+            )
+          ])
         }),
         0
       )
@@ -74922,13 +74923,18 @@ var render = function() {
     "div",
     [
       _c(
-        "b-button",
-        { attrs: { variant: "primary" } },
+        "b-jumbotron",
+        {
+          attrs: {
+            header: "Headline",
+            lead: "Bootstrap v4 Components for Vue.js 2"
+          }
+        },
         [
-          _vm._v("\n        Profile\n        "),
-          _c("b-badge", { attrs: { variant: "light" } }, [
-            _vm._v("9 "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("unread messages")])
+          _c("p", [_vm._v("For more information visit website")]),
+          _vm._v(" "),
+          _c("b-button", { attrs: { variant: "primary", href: "#" } }, [
+            _vm._v("More Info")
           ])
         ],
         1

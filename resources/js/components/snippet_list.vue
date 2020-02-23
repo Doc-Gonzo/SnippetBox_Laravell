@@ -2,43 +2,28 @@
     <div>
         <div>
             <ul>
-            <li v-for="snippet in allSnippets"><p v-bind:text="snippet"></p> </li>
+                <li v-for="snippet in Snippets"><a :href="'snippet_detail/' + snippet.id" :title="snippet.name"> {{snippet.name}}</a></li>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
-
     export default {
-
     name:'snippet_list',
-        props: ['allSnippets:' ,'chosenLangs','allLangs'],
+    mounted: function() {
+            fetch('/getAllSnippets', {method:'get'
+            })
+            .then((response) => {
+                return response.json()
+            })
+            .then ((jsonData) => {
+                this.Snippets = jsonData
+            })
+        },
         data: function () {
             return {
-                Snippets: [
-                    {
-                        id: '',
-                        name: '',
-                        desc: '',
-                        snippet_content: '',
-                        public: '',
-                        user_id: '',
-                        coding_language: '',
-                        sammlung_id: '',
-                    }
-                ]
-            }
-        },
-        methods: {
-            getAllSnippets(){
-                allSnippets = axios.default('/getAllSnippets');
-                return allSnippets;
-                },
-            addSnippetsToArray(snippets){
-                for (Snippets in snippets) {
-                    Snippets.push(Snippets)
-                }
+                Snippets: []
             }
         }
         }
