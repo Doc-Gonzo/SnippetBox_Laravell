@@ -1,11 +1,7 @@
 <template>
     <div class="main_nav_wrapper">
         <ul class="main_nav ">
-            <li class=""><a :href="add_snippet_link">{{add_snippet_text}}</a></li>
-            <li class=""><a :href="add_language_link">{{add_language_text}} </a></li>
-            <li class=""><a :href="add_sammlung_link">{{add_sammlung_text}}</a></li>
-            <li class=""><a :href="add_context_link">{{add_context_text}}</a></li>
-            <li class=""><a :href="get_api_link">{{get_api_text}}</a></li>
+            <li v-for="element in menu_elements"><a :href="element.link" :title="element.text">{{element.text}}</a> </li>
         </ul>
     </div>
 
@@ -13,27 +9,34 @@
 
 <script>
     export default {
-        name: "menu_main",
-
-        data() {
+        name: "main_auto",
+        data: function () {
             return {
-                add_snippet_text: 'Snippet anlegen',
-                add_snippet_link: '/addSnippet',
-                add_language_text: 'Sprache anlegen',
-                add_language_link: '/addLanguage',
-                add_sammlung_text: 'Sammlung anlegen',
-                add_sammlung_link: '/addSammlung',
-                add_context_text: 'Context anlegen',
-                add_context_link: '/addContext',
-                get_api_text: 'API AllSnippets',
-                get_api_link: '/getAllSnippets',
-            };
+                menu_elements:[
+                    {
+                        text: 'Snippet anlegen',
+                        link: 'addSnippet',
+                    },
+                    {
+                        text: 'Sprache anlegen',
+                        link: 'addLanguage',
+                    },
+                    {
+                        text: 'Sammlunganlegen',
+                        link: 'addSammlung',
+                    },
+                    {
+                        text: 'Context anlegen',
+                        link: 'addContext',
+                    },
+                    {
+                        text: 'API getAllSnippets',
+                        link: 'getAllSnippets',
+                    }
+                ]
+            }
         }
     }
-
-
-
-
 </script>
 
 <style scoped>

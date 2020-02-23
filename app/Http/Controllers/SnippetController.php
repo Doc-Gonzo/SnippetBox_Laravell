@@ -18,9 +18,10 @@ class SnippetController extends Controller
         $snippet->public = $request->public;
 
         $snippet->save();
-        // Leite auf Home weiter
+
         return redirect('/addSnippet');
     }
+    // API
     public function getAllSnippets(){
         $snippets = Snippet::all();
         return $snippets;

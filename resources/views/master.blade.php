@@ -15,7 +15,7 @@
         </div>
     @endif
     <div id="main_menu_wrapper">
-       <menu_main></menu_main>
+       <main_auto></main_auto>
     </div>
     <div id="menu_login">
         @include('layouts/navbar')
