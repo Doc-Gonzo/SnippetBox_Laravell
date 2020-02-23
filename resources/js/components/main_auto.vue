@@ -1,7 +1,7 @@
 <template>
     <div class="main_nav_wrapper">
         <ul class="main_nav ">
-            <li v-for="element in menu_elements"><a :href="element.link" :title="element.text">{{element.text}}</a> </li>
+            <li v-for="element in menu_elements" v-bind:key="element.text"><a :href="element.link" :title="element.text">{{element.text}}</a> </li>
         </ul>
     </div>
 </template>
@@ -14,27 +14,27 @@
                 menu_elements:[
                     {
                         text: 'Snippet anlegen',
-                        link: 'addSnippet',
+                        link: '/addSnippet',
                     },
                     {
                         text: 'Sprache anlegen',
-                        link: 'addLanguage',
+                        link: '/addLanguage',
                     },
                     {
                         text: 'Sammlunganlegen',
-                        link: 'addSammlung',
+                        link: '/addSammlung',
                     },
                     {
                         text: 'Context anlegen',
-                        link: 'addContext',
+                        link: '/addContext',
                     },
                     {
                         text: 'API getAllSnippets',
-                        link: 'getAllSnippets',
+                        link: '/getAllSnippets',
                     },
                     {
                         text: 'Vuetest',
-                        link: 'testvue',
+                        link: '/testvue',
                     }
                 ]
             }

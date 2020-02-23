@@ -36,10 +36,16 @@ Route::post('/addSnippet/', 'SnippetController@create')->middleware('auth');
 Route::get('/addSnippet/',  function () {
     return view('addSnippet');
 })->middleware('auth');
-Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets')->middleware('auth');
-
 Route::get('/testvue/',  function () {
     return view('vuetest');
 })->middleware('auth');
+
+Route::get('/snippet_detail/{id}', 'SnippetController@getSnippet')->middleware('auth');
+// Apis
+Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets')->middleware('auth');
+
+
+Route::get('/snippet/{id}', 'SnippetController@show')->middleware('auth');
+
 
 

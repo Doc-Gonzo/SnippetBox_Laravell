@@ -17,7 +17,6 @@
     @endif
     <div id="main_menu_wrapper">
        <main_auto></main_auto>
-
     </div>
     <div id="menu_login">
         @include('layouts/navbar')

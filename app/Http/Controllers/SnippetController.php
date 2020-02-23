@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CodingLanguage;
 use App\Snippet;
 use Illuminate\Http\Request;
 
@@ -25,5 +26,14 @@ class SnippetController extends Controller
     public function getAllSnippets(){
         $snippet = Snippet::all();
         return $snippet->jsonSerialize();
+    }
+    public function getSnippet($id){
+       return view('snippet_detail', [
+           'snippet_id' => $id
+       ]);
+    }
+    public function show($id){
+        $snippet = Snippet::findOrFail($id);
+        return $snippet->toJson();
     }
 }
