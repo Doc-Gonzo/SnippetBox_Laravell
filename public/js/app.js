@@ -1954,13 +1954,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "menu_main",
   data: function data() {
     return {
       add_snippet_text: 'Snippet anlegen',
-      add_snippet_link: '/addSnippet'
+      add_snippet_link: '/addSnippet',
+      add_language_text: 'Sprache anlegen',
+      add_language_link: '/addLanguage',
+      add_sammlung_text: 'Sammlung anlegen',
+      add_sammlung_link: '/addSammlung',
+      add_context_text: 'Context anlegen',
+      add_context_link: '/addContext',
+      get_api_text: 'API AllSnippets',
+      get_api_link: '/getAllSnippets'
     };
   }
 });
@@ -38053,8 +38060,46 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "main_nav_wrapper" }, [
+    _c("ul", { staticClass: "main_nav " }, [
+      _c("li", {}, [
+        _c("a", { attrs: { href: _vm.add_snippet_link } }, [
+          _vm._v(_vm._s(_vm.add_snippet_text))
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", {}, [
+        _c("a", { attrs: { href: _vm.add_language_link } }, [
+          _vm._v(_vm._s(_vm.add_language_text) + " ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", {}, [
+        _c("a", { attrs: { href: _vm.add_sammlung_link } }, [
+          _vm._v(_vm._s(_vm.add_sammlung_text))
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", {}, [
+        _c("a", { attrs: { href: _vm.add_context_link } }, [
+          _vm._v(_vm._s(_vm.add_context_text))
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", {}, [
+        _c("a", { attrs: { href: _vm.get_api_link } }, [
+          _vm._v(_vm._s(_vm.get_api_text))
+        ])
+      ])
+    ])
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 

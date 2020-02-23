@@ -1,12 +1,11 @@
 <template>
     <div class="main_nav_wrapper">
         <ul class="main_nav ">
-            <li class=""><a href="{{ add_snippet_link }}">{{add_snippet_text}}</a></li>
-            <li class=""><a href="/addLanguage">Sprache anlegen</a></li>
-            <li class=""><a href="/addSammlung">Sammlung anlegen</a></li>
-            <li class=""><a href="/addContext">Context anlegen</a></li>
-            <li class=""><a href="/getAllSnippets">API Get all Snippets</a></li>
-
+            <li class=""><a :href="add_snippet_link">{{add_snippet_text}}</a></li>
+            <li class=""><a :href="add_language_link">{{add_language_text}} </a></li>
+            <li class=""><a :href="add_sammlung_link">{{add_sammlung_text}}</a></li>
+            <li class=""><a :href="add_context_link">{{add_context_text}}</a></li>
+            <li class=""><a :href="get_api_link">{{get_api_text}}</a></li>
         </ul>
     </div>
 
@@ -19,6 +18,14 @@
             return {
                 add_snippet_text: 'Snippet anlegen',
                 add_snippet_link: '/addSnippet',
+                add_language_text: 'Sprache anlegen',
+                add_language_link: '/addLanguage',
+                add_sammlung_text: 'Sammlung anlegen',
+                add_sammlung_link: '/addSammlung',
+                add_context_text: 'Context anlegen',
+                add_context_link: '/addContext',
+                get_api_text: 'API AllSnippets',
+                get_api_link: '/getAllSnippets',
             };
         }
     }
