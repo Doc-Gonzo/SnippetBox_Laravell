@@ -38,4 +38,8 @@ Route::get('/addSnippet/',  function () {
 })->middleware('auth');
 Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets')->middleware('auth');
 
+Route::get('/testvue/',  function () {
+    return view('vuetest');
+})->middleware('auth');
+
 

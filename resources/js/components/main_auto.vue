@@ -4,7 +4,6 @@
             <li v-for="element in menu_elements"><a :href="element.link" :title="element.text">{{element.text}}</a> </li>
         </ul>
     </div>
-
 </template>
 
 <script>
@@ -32,6 +31,10 @@
                     {
                         text: 'API getAllSnippets',
                         link: 'getAllSnippets',
+                    },
+                    {
+                        text: 'Vuetest',
+                        link: 'testvue',
                     }
                 ]
             }

@@ -23,7 +23,7 @@ class SnippetController extends Controller
     }
     // API
     public function getAllSnippets(){
-        $snippets = Snippet::all();
-        return $snippets;
+        $snippet = Snippet::all();
+        return $snippet->jsonSerialize();
     }
 }
