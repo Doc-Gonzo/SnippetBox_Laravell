@@ -46,6 +46,7 @@ Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets')->middleware('
 
 
 Route::get('/snippet/{id}', 'SnippetController@show')->middleware('auth');
+Route::get('/snippet/{slug}', 'SnippetController@showSlug')->middleware('auth');
 
 
 

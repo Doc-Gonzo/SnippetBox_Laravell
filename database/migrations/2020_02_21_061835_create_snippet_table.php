@@ -16,6 +16,7 @@ class CreateSnippetTable extends Migration
         Schema::create('snippet', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('snippet_slug')->nullable(true)->unique(true);
             $table->longText('desc');
             $table->longText('snippet_content');
             $table->boolean('public');

@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\CodingLanguage;
 use App\Snippet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SnippetController extends Controller
 {
     public function create(Request $request){
         $snippet = new Snippet();
         $snippet->name = $request->name;
+        $snippet->snippet_slug = $this->slugTitle($request->name);
         $snippet->user_id = $request->user_id;
         $snippet->desc = $request->desc;
         $snippet->snippet_content = $request->snippet_content;
@@ -22,18 +24,26 @@ class SnippetController extends Controller
 
         return redirect('/addSnippet');
     }
+    public function slugTitle($title){
+        $slug = STR::slug($title);
+        return $slug;
+    }
     // API
     public function getAllSnippets(){
         $snippet = Snippet::all();
         return $snippet->jsonSerialize();
     }
-    public function getSnippet($id){
+    public function getSnippet($snippet_id){
        return view('snippet_detail', [
-           'snippet_id' => $id
+           'snippet_id' => $snippet_id
        ]);
     }
-    public function show($id){
-        $snippet = Snippet::findOrFail($id);
+    public function show($snippet_id){
+        $snippet = Snippet::findOrFail($snippet_id);
+        return $snippet->toJson();
+    }
+    public function showSlug($snippet){
+        $snippet = Snippet::findOrFail($slug);
         return $snippet->toJson();
     }
 }
