@@ -13496,3 +13496,10 @@ input[type=color].form-control:disabled {
   overflow-y: scroll;
 }
 
+.snippetlist {
+  position: absolute;
+  left: 25px;
+  top: 70px;
+  width: 300px;
+}
+

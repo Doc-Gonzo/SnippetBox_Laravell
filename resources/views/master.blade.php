@@ -24,6 +24,7 @@
     <div class="content">
         <div class="title m-b-md">@yield('headline')</div>
         <div class="content_wrapper">@yield('content')</div>
+        <div class="snippetlist"> <snippet_list></snippet_list></div>
     </div>
 </div>
 </body>
