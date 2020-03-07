@@ -24,6 +24,18 @@ class SnippetController extends Controller
 
         return redirect('/addSnippet');
     }
+    public function update(Request $request){
+        $snippet = new Snippet();
+        $snippet->name = $request->snippet_name;
+        $snippet->id = $request->snippet_id;
+        $snippet->snippet_slug = $this->slugTitle($request->snippet_name);
+        $snippet->user_id = $request->snippet_user_id;
+        $snippet->desc = $request->snippet_desc;
+        $snippet->snippet_content = $request->snippet_content;
+        $snippet->update();
+
+        return redirect('/addSnippet/');
+    }
     public function slugTitle($title){
         $slug = STR::slug($title);
         return $slug;

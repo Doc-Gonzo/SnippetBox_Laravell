@@ -33,6 +33,9 @@ Route::get('/addSammlung/',  function () {
 })->middleware('auth');
 
 Route::post('/addSnippet/', 'SnippetController@create')->middleware('auth');
+
+Route::post('/updateSnippet/', 'SnippetController@update')->middleware('auth');
+
 Route::get('/addSnippet/',  function () {
     return view('addSnippet');
 })->middleware('auth');

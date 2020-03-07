@@ -1,8 +1,13 @@
 <template>
     <div>
-        {{Snippet.name}} <br><br>
-        {{Snippet.desc}}<br><br>
-        {{Snippet.snippet_content}}<br><br>
+        <form action="/updateSnippet" method="post">
+            <input type="hidden" name="snippet_id" :value="snippet_id">
+            <input type="hidden" name="snippet_user_id" :value="Snippet.user_id">
+           <input type="text" class="form-control" name="snippet_name" :value="Snippet.name">  <br><br>
+            <textarea class="form-control" name="snippet_desc">{{Snippet.desc}}</textarea><br><br>
+            <textarea class="form-control detail_content" name="snippet_content">{{Snippet.snippet_content}}</textarea><br><br>
+            <button type="submit" class="btn-dark">Update Snippet</button>
+        </form>
         {{Snippet.coding_language_id}}<br><br>
     </div>
 </template>
@@ -36,5 +41,13 @@
 </script>
 
 <style scoped>
-
+    .detail_content {
+        width: 800px;
+        height: 400px !important;
+        background-color: #1b1e21;
+        color: yellow;
+        font-family: cursive;
+        letter-spacing: 1.4px;
+        font-size: smaller;
+    }
 </style>

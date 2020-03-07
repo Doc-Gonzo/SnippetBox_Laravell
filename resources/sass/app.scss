@@ -23,10 +23,18 @@
 .snippet_content {
     min-height: 250px;
     overflow-y: scroll;
+    width: 800px;
+    height: 400px !important;
+    background-color: #1b1e21;
+    color: yellow;
+    font-family: cursive;
+    letter-spacing: 1.4px;
+    font-size: smaller;
 }
 .snippetlist {
     position: absolute;
-    left: 25px;
+    right: 25px;
     top: 70px;
     width: 300px;
 }
+

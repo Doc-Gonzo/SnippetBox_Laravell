@@ -5,7 +5,7 @@
 @section('content')
 
    <!-- <testvvue></testvvue> -->
-    <snippet_list></snippet_list>
+    <!-- <snippet_list></snippet_list> -->
 
 @endsection
 
