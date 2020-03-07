@@ -27,6 +27,9 @@ Route::get('/addLanguage/',  function () {
     return view('addLanguage');
 })->middleware('auth');
 
+Route::get('/getLanguages/', 'LanguageController@getAllLanguages')->middleware('auth');
+
+
 Route::post('/addSammlung/', 'SammlungController@create')->middleware('auth');
 Route::get('/addSammlung/',  function () {
     return view('addSammlung');

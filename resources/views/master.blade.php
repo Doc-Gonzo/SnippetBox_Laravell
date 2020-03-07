@@ -24,8 +24,17 @@
     <div class="content">
         <div class="title m-b-md">@yield('headline')</div>
         <div class="content_wrapper">@yield('content')</div>
-        <div class="snippetlist"> <snippet_list></snippet_list></div>
+        <div id="sidebar">
+            <div class="snippetlist"> <snippet_list></snippet_list></div>
+            <div class="languagelist"> <language_list></language_list></div>
+        </div>
     </div>
 </div>
 </body>
 </html>
+<script>
+    import Language_list from "../js/components/language_list";
+    export default {
+        components: {Language_list}
+    }
+</script>

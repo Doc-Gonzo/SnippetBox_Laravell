@@ -23,6 +23,7 @@ Vue.use(BootstrapVue);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('snippet_list', require('./components/snippet_list.vue').default);
+Vue.component('language_list', require('./components/language_list.vue').default);
 Vue.component('main_auto', require('./components/main_auto.vue').default);
 Vue.component('testvvue', require('./components/testvvue.vue').default);
 Vue.component('snippet_detail', require('./components/snippet_detail').default);

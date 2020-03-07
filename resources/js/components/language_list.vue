@@ -1,14 +1,14 @@
 <template>
     <div>
         <div>
-            <h4 v-on:click="isHidden = !isHidden ">Snippets</h4>
+            <h4 v-on:click="isHidden = !isHidden ">Languages</h4>
             <transition name="fade">
-
                 <b-list-group v-if="!isHidden">
-                    <b-list-group-item v-for="snippet in Snippets" v-bind:key="snippet.id" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
-                        <a class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.id" :title="snippet.desc"> {{snippet.name}}</a>
-                        <b-badge variant="primary">{{snippet.coding_language_id}}</b-badge>
+                    <b-list-group-item v-for="language in Languages" v-bind:key="language.id" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
+                        <label>{{language.name}}</label>
+                        <input type="checkbox" :name="language.name">
                     </b-list-group-item>
+                    <button type="submit">Filter Snippetlist</button>
                 </b-list-group>
             </transition>
         </div>
@@ -17,22 +17,21 @@
 
 <script>
     export default {
-    name:'snippet_list',
+    name:'language_list',
     mounted: function() {
-            fetch('/getAllSnippets', {method:'get'
+            fetch('/getLanguages', {method:'get'
             })
             .then((response) => {
                 return response.json()
             })
             .then ((jsonData) => {
-                this.Snippets = jsonData
+                this.Languages = jsonData
             })
         },
         data: function () {
-
             return {
-                isHidden: false,
-                Snippets: []
+                isHidden: true,
+                Languages: []
             }
         }
         }
@@ -47,11 +46,16 @@
     }
     h4 {
         cursor: pointer;
-        background-color:whitesmoke;
-        margin-bottom:0px;
-        padding-bottom:10px;
-        padding-top:10px;
+        background-color: whitesmoke;
+        margin-bottom: 0px;
+        padding-bottom: 4px;
+        padding-top: 4px;
         border-radius: 8px 8px 0 0;
+        font-size: 21px;
+    }
+    label {
+        margin-bottom: 0;
+        font-size: 14px;
     }
     .snippetlist {
         position: absolute;
@@ -61,7 +65,7 @@
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
+        transition: opacity .8s;
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
@@ -81,6 +85,8 @@
         border-bottom: 1px solid #fff !important;
         display:block !important;
         width:100%;
-        font-size: 15px;
+    }
+    input[type="checkbox"] {
+        cursor:pointer;
     }
 </style>

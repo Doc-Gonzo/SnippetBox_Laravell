@@ -16,4 +16,9 @@ class LanguageController extends Controller
         // Leite auf Home weiter
         return redirect('/addLanguage');
     }
+    // API
+    public function getAllLanguages(){
+        $language = CodingLanguage::all();
+        return $language->jsonSerialize();
+    }
 }
