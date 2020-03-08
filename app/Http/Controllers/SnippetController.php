@@ -43,7 +43,22 @@ class SnippetController extends Controller
     // API
     public function getAllSnippets(){
         $snippet = Snippet::all();
+
         return $snippet->jsonSerialize();
+    }
+    public function getAllSnippetsClean(){
+        $allSnippets = Snippet::all();
+        // Array indem saubere Snippets landen
+        $snippetsClean = array();
+        // Jedes gefundene Snippet aufbereiten -> LangName suchen, array basteln und dieses Array in Hauptarray pushen
+        foreach ($allSnippets as $snippet) {
+            $snippetLanguage = CodingLanguage::findOrFail($snippet->coding_language_id);
+            $snippetLangName = $snippetLanguage->name;
+            $cleanArray = array('Name' => $snippet->name, "Desc" => $snippet->desc, 'ID' => $snippet->id, 'Langname' =>$snippetLangName);
+            array_push($snippetsClean, $cleanArray);
+        }
+        $snippetsClean = json_encode($snippetsClean);
+        return $snippetsClean;
     }
     public function getSnippet($snippet_id){
        return view('snippet_detail', [

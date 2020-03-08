@@ -47,7 +47,6 @@
         height: 400px !important;
         background-color: #1b1e21;
         color: yellow;
-        font-family: cursive;
         letter-spacing: 1.4px;
         font-size: smaller;
     }

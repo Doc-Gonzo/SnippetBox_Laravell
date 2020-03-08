@@ -49,7 +49,7 @@ Route::get('/testvue/',  function () {
 Route::get('/snippet_detail/{id}', 'SnippetController@getSnippet')->middleware('auth');
 // Apis
 Route::get('/getAllSnippets/', 'SnippetController@getAllSnippets')->middleware('auth');
-
+Route::get('/getAllSnippetsClean/', 'SnippetController@getAllSnippetsClean')->middleware('auth');
 
 Route::get('/snippet/{id}', 'SnippetController@show')->middleware('auth');
 Route::get('/snippet/{slug}', 'SnippetController@showSlug')->middleware('auth');

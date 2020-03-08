@@ -32,9 +32,4 @@
 </div>
 </body>
 </html>
-<script>
-    import Language_list from "../js/components/language_list";
-    export default {
-        components: {Language_list}
-    }
-</script>
+

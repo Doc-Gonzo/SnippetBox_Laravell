@@ -23,6 +23,7 @@ Vue.use(BootstrapVue);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('snippet_list', require('./components/snippet_list.vue').default);
+Vue.component('snippet_list_clean', require('./components/snippet_list_clean.vue').default);
 Vue.component('language_list', require('./components/language_list.vue').default);
 Vue.component('main_auto', require('./components/main_auto.vue').default);
 Vue.component('testvvue', require('./components/testvvue.vue').default);
@@ -39,3 +40,17 @@ Vue.component('snippet_detail', require('./components/snippet_detail').default);
 const app = new Vue({
     el: '#app'
 });
+
+
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML =
+                this.responseText;
+        }
+    };
+    xhttp.open("GET", "http://www.kama-design.at/pentest/ajax_info.txt", true);
+    xhttp.send();
+}
+
