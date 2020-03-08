@@ -26,10 +26,11 @@
                 })
                 .then ((jsonData) => {
                     this.Snippets = jsonData
+                    this.Snippets.sort((a, b) => (a.Langname > b.Langname) ? 1 : -1)
+                    this.Snippets.reverse();
                 })
         },
         data: function () {
-
             return {
                 isHidden: false,
                 Snippets: []
@@ -82,5 +83,26 @@
         display:block !important;
         width:100%;
         font-size: 15px;
+    }
+    .badge-primary {
+        width: 54px;
+    }
+    .Vue {
+        background-color:#3aae7f;
+    }
+    .PHP {
+        background-color: #4a4c7c;
+    }
+    .Laravel {
+        background-color:#ff2d20;
+    }
+    .DUCKY {
+        background-color:orange;
+    }
+    .CSS {
+        background-color: #4a8ddb;
+    }
+    .JS {
+        background-color: #f0d81c;
     }
 </style>

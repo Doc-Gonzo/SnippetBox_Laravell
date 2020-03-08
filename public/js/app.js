@@ -2166,6 +2166,12 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (jsonData) {
       _this.Snippets = jsonData;
+
+      _this.Snippets.sort(function (a, b) {
+        return a.Langname > b.Langname ? 1 : -1;
+      });
+
+      _this.Snippets.reverse();
     });
   },
   data: function data() {
@@ -42909,7 +42915,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.b-list-group-item[data-v-0c25b756] {\n    position:relative;\n}\na[data-v-0c25b756]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-0c25b756] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-0c25b756] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-0c25b756], .fade-leave-active[data-v-0c25b756] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-0c25b756], .fade-leave-to[data-v-0c25b756] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-0c25b756] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-0c25b756] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-0c25b756] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n", ""]);
+exports.push([module.i, "\n.b-list-group-item[data-v-0c25b756] {\n    position:relative;\n}\na[data-v-0c25b756]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-0c25b756] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-0c25b756] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-0c25b756], .fade-leave-active[data-v-0c25b756] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-0c25b756], .fade-leave-to[data-v-0c25b756] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-0c25b756] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-0c25b756] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-0c25b756] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-0c25b756] {\n    width: 54px;\n}\n.Vue[data-v-0c25b756] {\n    background-color:#3aae7f;\n}\n.PHP[data-v-0c25b756] {\n    background-color: #4a4c7c;\n}\n.Laravel[data-v-0c25b756] {\n    background-color:#ff2d20;\n}\n.DUCKY[data-v-0c25b756] {\n    background-color:orange;\n}\n.CSS[data-v-0c25b756] {\n    background-color: #4a8ddb;\n}\n.JS[data-v-0c25b756] {\n    background-color: #f0d81c;\n}\n", ""]);
 
 // exports
 

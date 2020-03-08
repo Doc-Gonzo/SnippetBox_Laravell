@@ -6,6 +6,7 @@ use App\CodingLanguage;
 use App\Snippet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\Integer;
 
 class SnippetController extends Controller
 {
@@ -48,6 +49,7 @@ class SnippetController extends Controller
     }
     public function getAllSnippetsClean(){
         $allSnippets = Snippet::all();
+
         // Array indem saubere Snippets landen
         $snippetsClean = array();
         // Jedes gefundene Snippet aufbereiten -> LangName suchen, array basteln und dieses Array in Hauptarray pushen
@@ -57,6 +59,7 @@ class SnippetController extends Controller
             $cleanArray = array('Name' => $snippet->name, "Desc" => $snippet->desc, 'ID' => $snippet->id, 'Langname' =>$snippetLangName);
             array_push($snippetsClean, $cleanArray);
         }
+
         $snippetsClean = json_encode($snippetsClean);
         return $snippetsClean;
     }
