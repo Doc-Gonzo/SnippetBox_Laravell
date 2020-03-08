@@ -27,7 +27,7 @@
                 .then ((jsonData) => {
                     this.Snippets = jsonData
                     this.Snippets.sort((a, b) => (a.Langname > b.Langname) ? 1 : -1)
-                    this.Snippets.reverse();
+
                 })
         },
         data: function () {
@@ -85,7 +85,7 @@
         font-size: 15px;
     }
     .badge-primary {
-        width: 54px;
+        width: 60px;
     }
     .Vue {
         background-color:#3aae7f;
