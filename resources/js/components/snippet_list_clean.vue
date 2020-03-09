@@ -5,7 +5,7 @@
             <transition name="fade">
 
                 <b-list-group v-if="!isHidden">
-                    <b-list-group-item v-for="snippet in Snippets" v-bind:key="snippet.id" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
+                    <b-list-group-item v-for="snippet in Snippets" v-bind:key="snippet.id" :class="snippet.Langname" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
                         <a class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
                         <b-badge variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
                     </b-list-group-item>
@@ -86,23 +86,25 @@
     }
     .badge-primary {
         width: 60px;
+        border-radius:0;
+        line-height:1.1;
     }
-    .Vue {
+    span.Vue {
         background-color:#3aae7f;
     }
-    .PHP {
+    span.PHP {
         background-color: #4a4c7c;
     }
-    .Laravel {
+    span.Laravel {
         background-color:#ff2d20;
     }
-    .DUCKY {
+    span.DUCKY {
         background-color:orange;
     }
-    .CSS {
+    span.CSS {
         background-color: #4a8ddb;
     }
-    .JS {
+    span.JS {
         background-color: #f0d81c;
     }
 </style>
