@@ -4,7 +4,7 @@
             <h4 v-on:click="isHidden = !isHidden ">Snippetlist smart</h4>
             <transition name="fade">
                 <b-list-group v-if="!isHidden">
-                    <b-list-group-item v-for="snippet in Snippets" v-bind:key="snippet.id" :class="snippet.Langname" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
+                    <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" :class="snippet.Langname" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
                         <a class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
                         <b-badge variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
                     </b-list-group-item>
@@ -41,8 +41,8 @@
                         return response.json()
                     })
                     .then ((jsonData) => {
-                        this.Languages = jsonData;
-                        
+                        this.Languages = jsonData
+                        this.checkAllBoxes()
                     })
 
         },
@@ -51,7 +51,14 @@
                 isHidden: false,
                 Snippets: [],
                 Languages: [],
-                checkedLangs: ['Laravel']
+                checkedLangs: []
+            }
+        },
+        methods: {
+            checkAllBoxes: function() {
+                this.Languages.forEach((value) => {
+                    this.checkedLangs.push(value.name);
+                });
             }
         }
     }

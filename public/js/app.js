@@ -2236,6 +2236,8 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (jsonData) {
       _this.Languages = jsonData;
+
+      _this.checkAllBoxes();
     });
   },
   data: function data() {
@@ -2243,8 +2245,17 @@ __webpack_require__.r(__webpack_exports__);
       isHidden: false,
       Snippets: [],
       Languages: [],
-      checkedLangs: ['Laravel']
+      checkedLangs: []
     };
+  },
+  methods: {
+    checkAllBoxes: function checkAllBoxes() {
+      var _this2 = this;
+
+      this.Languages.forEach(function (value) {
+        _this2.checkedLangs.push(value.name);
+      });
+    }
   }
 });
 
@@ -75704,7 +75715,7 @@ var render = function() {
                     return _c(
                       "b-list-group-item",
                       {
-                        key: snippet.id,
+                        key: snippet.name,
                         staticClass:
                           "pt-0 pb-0 d-flex justify-content-between align-items-center",
                         class: snippet.Langname
