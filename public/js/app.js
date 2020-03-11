@@ -2217,6 +2217,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'snippet_list_smart',
   mounted: function mounted() {
@@ -43018,7 +43021,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    line-height:1.1;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n", ""]);
+exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    line-height:1.1;\n}\n.filterButton[data-v-20597856] {\n    padding-bottom: 0;\n    padding-top: 0;\n    text-align:right;\n    display:inline;\n    width:200px;\n    font-size:12px;\n}\n.filterButton label[data-v-20597856] {\n    margin-bottom:0px;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n", ""]);
 
 // exports
 
@@ -75728,28 +75731,32 @@ var render = function() {
                         class: { "snippet.Langname": true }
                       },
                       [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "d-block pt-0 pb-0 text-left",
-                            attrs: {
-                              href: "/snippet_detail/" + snippet.ID,
-                              title: snippet.Desc
-                            }
-                          },
-                          [_vm._v(" " + _vm._s(snippet.Name))]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-badge",
-                          {
-                            class: snippet.Langname,
-                            attrs: { variant: "primary" }
-                          },
-                          [_vm._v(_vm._s(snippet.Langname))]
-                        )
+                        _vm.checkedLangs.includes(snippet.Langname)
+                          ? [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "d-block pt-0 pb-0 text-left",
+                                  attrs: {
+                                    href: "/snippet_detail/" + snippet.ID,
+                                    title: snippet.Desc
+                                  }
+                                },
+                                [_vm._v(" " + _vm._s(snippet.Name))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-badge",
+                                {
+                                  class: snippet.Langname,
+                                  attrs: { variant: "primary" }
+                                },
+                                [_vm._v(_vm._s(snippet.Langname))]
+                              )
+                            ]
+                          : _vm._e()
                       ],
-                      1
+                      2
                     )
                   }),
                   1

@@ -4,9 +4,12 @@
             <h4 v-on:click="isHidden = !isHidden ">Snippetlist smart</h4>
             <transition name="fade">
                 <b-list-group v-if="!isHidden">
+
                     <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
+                        <template v-if="checkedLangs.includes(snippet.Langname)">
                         <a class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
                         <b-badge variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
+                        </template>
                     </b-list-group-item>
                 </b-list-group>
             </transition>
@@ -120,6 +123,17 @@
         width: 60px;
         border-radius:0;
         line-height:1.1;
+    }
+    .filterButton {
+        padding-bottom: 0;
+        padding-top: 0;
+        text-align:right;
+        display:inline;
+        width:200px;
+        font-size:12px;
+    }
+    .filterButton label {
+        margin-bottom:0px;
     }
     span.Vue {
         background-color:#3aae7f;
