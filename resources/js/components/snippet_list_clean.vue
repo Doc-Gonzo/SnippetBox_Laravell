@@ -98,7 +98,7 @@
     span.Laravel {
         background-color:#ff2d20;
     }
-    span.DUCKY {
+    span.Ducky {
         background-color:orange;
     }
     span.CSS {
@@ -106,5 +106,8 @@
     }
     span.JS {
         background-color: #f0d81c;
+    }
+    span.SAP {
+        background-color: #003f86;
     }
 </style>

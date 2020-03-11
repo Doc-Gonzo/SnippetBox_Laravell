@@ -2215,6 +2215,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'snippet_list_smart',
   mounted: function mounted() {
@@ -2253,7 +2254,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.Languages.forEach(function (value) {
-        _this2.checkedLangs.push(value.name);
+        if (!_this2.checkedLangs.includes(value.name)) {
+          _this2.checkedLangs.push(value.name);
+        }
       });
     }
   }
@@ -42992,7 +42995,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.b-list-group-item[data-v-0c25b756] {\n    position:relative;\n}\na[data-v-0c25b756]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-0c25b756] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-0c25b756] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-0c25b756], .fade-leave-active[data-v-0c25b756] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-0c25b756], .fade-leave-to[data-v-0c25b756] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-0c25b756] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-0c25b756] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-0c25b756] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-0c25b756] {\n    width: 60px;\n    border-radius:0;\n    line-height:1.1;\n}\nspan.Vue[data-v-0c25b756] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-0c25b756] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-0c25b756] {\n    background-color:#ff2d20;\n}\nspan.DUCKY[data-v-0c25b756] {\n    background-color:orange;\n}\nspan.CSS[data-v-0c25b756] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-0c25b756] {\n    background-color: #f0d81c;\n}\n", ""]);
+exports.push([module.i, "\n.b-list-group-item[data-v-0c25b756] {\n    position:relative;\n}\na[data-v-0c25b756]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-0c25b756] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-0c25b756] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-0c25b756], .fade-leave-active[data-v-0c25b756] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-0c25b756], .fade-leave-to[data-v-0c25b756] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-0c25b756] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-0c25b756] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-0c25b756] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-0c25b756] {\n    width: 60px;\n    border-radius:0;\n    line-height:1.1;\n}\nspan.Vue[data-v-0c25b756] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-0c25b756] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-0c25b756] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-0c25b756] {\n    background-color:orange;\n}\nspan.CSS[data-v-0c25b756] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-0c25b756] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-0c25b756] {\n    background-color: #003f86;\n}\n", ""]);
 
 // exports
 
@@ -43011,7 +43014,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    line-height:1.1;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.DUCKY[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\n", ""]);
+exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    background-color:whitesmoke;\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    border-radius: 8px 8px 0 0;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    border-radius:0 0 8px 8px;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 15px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    line-height:1.1;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n", ""]);
 
 // exports
 
@@ -75718,7 +75721,7 @@ var render = function() {
                         key: snippet.name,
                         staticClass:
                           "pt-0 pb-0 d-flex justify-content-between align-items-center",
-                        class: snippet.Langname
+                        class: { "snippet.Langname": true }
                       },
                       [
                         _c(
@@ -75753,6 +75756,8 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("span", [_vm._v("Checked names: " + _vm._s(_vm.checkedLangs))]),
+        _vm._v(" "),
+        _c("b-button", { on: { click: _vm.checkAllBoxes } }, [_vm._v("All")]),
         _vm._v(" "),
         _c(
           "b-list-group",

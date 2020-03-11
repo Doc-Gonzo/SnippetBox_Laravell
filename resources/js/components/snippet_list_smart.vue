@@ -4,7 +4,7 @@
             <h4 v-on:click="isHidden = !isHidden ">Snippetlist smart</h4>
             <transition name="fade">
                 <b-list-group v-if="!isHidden">
-                    <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" :class="snippet.Langname" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
+                    <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
                         <a class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
                         <b-badge variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
                     </b-list-group-item>
@@ -12,6 +12,7 @@
             </transition>
 
             <span>Checked names: {{ checkedLangs }}</span>
+            <b-button v-on:click="checkAllBoxes">All</b-button>
             <b-list-group>
                 <b-list-group-item v-for="language in Languages" v-bind:key="language.name" class="filterButton">
                     <label :for="language.name">{{language.name}}</label>
@@ -57,7 +58,9 @@
         methods: {
             checkAllBoxes: function() {
                 this.Languages.forEach((value) => {
-                    this.checkedLangs.push(value.name);
+                    if (!this.checkedLangs.includes(value.name)) {
+                        this.checkedLangs.push(value.name);
+                    }
                 });
             }
         }
@@ -123,7 +126,7 @@
     span.Laravel {
         background-color:#ff2d20;
     }
-    span.DUCKY {
+    span.Ducky {
         background-color:orange;
     }
     span.CSS {
@@ -131,5 +134,8 @@
     }
     span.JS {
         background-color: #f0d81c;
+    }
+    span.SAP {
+        background-color: #003f86;
     }
 </style>
