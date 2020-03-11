@@ -1,28 +1,33 @@
 <template>
     <div>
         <div>
-            <h4 v-on:click="isHidden = !isHidden ">Snippetlist smart</h4>
+            <h4 v-on:click="isHidden = !isHidden ">Snippetlist</h4>
             <transition name="fade">
-                <b-list-group v-if="!isHidden">
+                <b-list-group v-if="!isHidden" class="snippet_list_wrapper">
 
-                    <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
-                        <template v-if="checkedLangs.includes(snippet.Langname)">
-                        <a class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
-                        <b-badge variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
-                        </template>
+                    <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-if="checkedLangs.includes(snippet.Langname)" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
+                        <transition name="fade">
+                            <a  v-if="checkedLangs.includes(snippet.Langname)" class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
+                        </transition>
+                        <transition name="fade">
+                            <b-badge  v-if="checkedLangs.includes(snippet.Langname)" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
+                        </transition>
                     </b-list-group-item>
                 </b-list-group>
             </transition>
 
-            <span>Checked names: {{ checkedLangs }}</span>
-            <b-button v-on:click="checkAllBoxes">All</b-button>
-                <b-button v-on:click="uncheckAllBoxes">None</b-button>
-            <b-list-group>
+            <h5 v-on:click="langListHidden = !langListHidden ">Langlist</h5>
+            <transition name="fade">
+            <b-list-group v-if="!langListHidden">
+                <b-button class="smallButton" v-if="!langListHidden" v-on:click="checkAllBoxes">All</b-button>
+                <b-button class="smallButton" v-if="!langListHidden"  v-on:click="uncheckAllBoxes">None</b-button>
                 <b-list-group-item v-for="language in Languages" v-bind:key="language.name" class="filterButton">
                     <label :for="language.name">{{language.name}}</label>
                     <input type="checkbox" :checked="true" :id="language.name" :value="language.name"  v-model="checkedLangs">
                 </b-list-group-item>
+
             </b-list-group>
+            </transition>
         </div>
     </div>
 </template>
@@ -47,6 +52,7 @@
                     })
                     .then ((jsonData) => {
                         this.Languages = jsonData
+                        this.Languages.sort((a, b) => (a.name > b.name) ? 1 : -1)
                         this.checkAllBoxes()
                     })
 
@@ -54,6 +60,7 @@
         data: function () {
             return {
                 isHidden: false,
+                langListHidden: true,
                 Snippets: [],
                 Languages: [],
                 checkedLangs: []
@@ -89,6 +96,9 @@
         padding-top:10px;
         border-radius: 8px 8px 0 0;
     }
+    h5 {
+        cursor:pointer;
+    }
     .snippetlist {
         position: absolute;
         right: 25px;
@@ -97,11 +107,24 @@
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
+        transition: opacity 1s, height 2s;
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
+        height: 0;
     }
+
+
+    .fadeSlow-enter-active, .fadeSlow-leave-active {
+        transition: opacity 1s;
+        transition: height 0.3s;
+    }
+    .fadeSlow-enter, .fadeSlow-leave-to /* .fadeSlow-leave-active below version 2.1.8 */ {
+        opacity: 0;
+        height: 0;
+    }
+
+
     .list-group {
         padding-bottom:20px !important;
         padding-top:20px !important;
@@ -117,11 +140,12 @@
         border-bottom: 1px solid #fff !important;
         display:block !important;
         width:100%;
-        font-size: 15px;
+        font-size: 14px;
     }
     .badge-primary {
         width: 60px;
         border-radius:0;
+        padding: 5px 0;
         line-height:1.1;
     }
     .filterButton {
@@ -129,11 +153,19 @@
         padding-top: 0;
         text-align:right;
         display:inline;
-        width:200px;
         font-size:12px;
     }
     .filterButton label {
         margin-bottom:0px;
+    }
+    .smallButton {
+        padding: 0;
+    }
+    .snippet_list_wrapper {
+        max-height: 305px;
+        overflow-y: scroll;
+        margin-bottom:20px;
+        font-size:12px;
     }
     span.Vue {
         background-color:#3aae7f;
@@ -155,5 +187,37 @@
     }
     span.SAP {
         background-color: #003f86;
+    }
+
+    .slide-enter-active {
+        -moz-transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -moz-transition-timing-function: ease-in;
+        -webkit-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+    }
+
+    .slide-leave-active {
+        -moz-transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+
+    .slide-enter-to, .slide-leave {
+        max-height: 100px;
+        overflow: hidden;
+    }
+
+    .slide-enter, .slide-leave-to {
+        overflow: hidden;
+        max-height: 0;
     }
 </style>
