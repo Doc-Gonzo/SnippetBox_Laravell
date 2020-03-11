@@ -2216,6 +2216,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'snippet_list_smart',
   mounted: function mounted() {
@@ -2258,6 +2259,9 @@ __webpack_require__.r(__webpack_exports__);
           _this2.checkedLangs.push(value.name);
         }
       });
+    },
+    uncheckAllBoxes: function uncheckAllBoxes() {
+      this.checkedLangs = [];
     }
   }
 });
@@ -75758,6 +75762,10 @@ var render = function() {
         _c("span", [_vm._v("Checked names: " + _vm._s(_vm.checkedLangs))]),
         _vm._v(" "),
         _c("b-button", { on: { click: _vm.checkAllBoxes } }, [_vm._v("All")]),
+        _vm._v(" "),
+        _c("b-button", { on: { click: _vm.uncheckAllBoxes } }, [
+          _vm._v("None")
+        ]),
         _vm._v(" "),
         _c(
           "b-list-group",

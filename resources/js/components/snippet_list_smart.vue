@@ -13,6 +13,7 @@
 
             <span>Checked names: {{ checkedLangs }}</span>
             <b-button v-on:click="checkAllBoxes">All</b-button>
+                <b-button v-on:click="uncheckAllBoxes">None</b-button>
             <b-list-group>
                 <b-list-group-item v-for="language in Languages" v-bind:key="language.name" class="filterButton">
                     <label :for="language.name">{{language.name}}</label>
@@ -62,6 +63,9 @@
                         this.checkedLangs.push(value.name);
                     }
                 });
+            },
+            uncheckAllBoxes: function() {
+               this.checkedLangs = [];
             }
         }
     }
