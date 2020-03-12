@@ -1,7 +1,22 @@
 <template>
     <div>
         <div>
-            <h4 v-on:click="isHidden = !isHidden ">Snippetlist</h4>
+
+            <h5 v-on:click="langListHidden = !langListHidden ">Langlist</h5>
+            <transition name="fade">
+                <b-list-group v-if="!langListHidden" class="lang_list_wrapper">
+                    <b-button class="smallButton" v-if="!langListHidden" v-on:click="checkAllBoxes">All</b-button>
+                    <b-button class="smallButton" v-if="!langListHidden"  v-on:click="uncheckAllBoxes">None</b-button>
+                    <b-list-group-item v-for="language in Languages" v-bind:key="language.name" class="filterButton">
+                        <label :for="language.name">{{language.name}}</label>
+                        <input type="checkbox" :checked="true" :id="language.name" :value="language.name"  v-model="checkedLangs">
+                    </b-list-group-item>
+
+                </b-list-group>
+            </transition>
+
+
+            <h4 v-on:click="$store.commit('toggle_isHidden')">Snippetlist</h4>
             <transition name="fade">
                 <b-list-group v-if="!isHidden" class="snippet_list_wrapper">
 
@@ -16,23 +31,14 @@
                 </b-list-group>
             </transition>
 
-            <h5 v-on:click="langListHidden = !langListHidden ">Langlist</h5>
-            <transition name="fade">
-            <b-list-group v-if="!langListHidden">
-                <b-button class="smallButton" v-if="!langListHidden" v-on:click="checkAllBoxes">All</b-button>
-                <b-button class="smallButton" v-if="!langListHidden"  v-on:click="uncheckAllBoxes">None</b-button>
-                <b-list-group-item v-for="language in Languages" v-bind:key="language.name" class="filterButton">
-                    <label :for="language.name">{{language.name}}</label>
-                    <input type="checkbox" :checked="true" :id="language.name" :value="language.name"  v-model="checkedLangs">
-                </b-list-group-item>
 
-            </b-list-group>
-            </transition>
         </div>
+        <add-language></add-language>
     </div>
 </template>
 
 <script>
+    import addLanguage from "./addLanguage";
     export default {
         name:'snippet_list_smart',
         mounted: function() {
@@ -59,11 +65,15 @@
         },
         data: function () {
             return {
-                isHidden: false,
                 langListHidden: true,
                 Snippets: [],
                 Languages: [],
                 checkedLangs: []
+            }
+        },
+        computed: {
+            isHidden() {
+                return this.$store.getters.getIsHidden;
             }
         },
         methods: {
@@ -76,6 +86,9 @@
             },
             uncheckAllBoxes: function() {
                this.checkedLangs = [];
+            },
+            toggleHidden: function() {
+                this.isHidden = !this.isHidden;
             }
         }
     }
@@ -90,11 +103,11 @@
     }
     h4 {
         cursor: pointer;
-        background-color:whitesmoke;
+        /* background-color:whitesmoke;*/
         margin-bottom:0px;
         padding-bottom:10px;
         padding-top:10px;
-        border-radius: 8px 8px 0 0;
+        /* border-radius: 8px 8px 0 0; */
     }
     h5 {
         cursor:pointer;
@@ -107,7 +120,7 @@
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity 1s, height 2s;
+        transition: opacity 1s, height .5s;
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
@@ -116,20 +129,18 @@
 
 
     .fadeSlow-enter-active, .fadeSlow-leave-active {
-        transition: opacity 1s;
+        transition: opacity .8s;
         transition: height 0.3s;
     }
     .fadeSlow-enter, .fadeSlow-leave-to /* .fadeSlow-leave-active below version 2.1.8 */ {
         opacity: 0;
         height: 0;
     }
-
-
     .list-group {
         padding-bottom:20px !important;
         padding-top:20px !important;
         background-color:#1b1e21;
-        border-radius:0 0 8px 8px;
+        /* border-radius:0 0 8px 8px; */
     }
     .list-group-item {
         color:yellow !important;
@@ -162,10 +173,14 @@
         padding: 0;
     }
     .snippet_list_wrapper {
-        max-height: 305px;
+           max-height: 311px;
+           overflow-y: scroll;
+           margin-bottom:20px;
+           font-size:12px;
+       }
+    .lang_list_wrapper {
+        max-height: 175px;
         overflow-y: scroll;
-        margin-bottom:20px;
-        font-size:12px;
     }
     span.Vue {
         background-color:#3aae7f;

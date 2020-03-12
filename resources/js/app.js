@@ -8,7 +8,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import BootstrapVue from "bootstrap-vue";
+import Vuex from 'vuex';
+
 Vue.use(BootstrapVue);
+Vue.use(Vuex);
+/* import storeData from "./store/index"; */
 
 /**
  * The following block of code may be used to automatically register your
@@ -24,8 +28,8 @@ Vue.use(BootstrapVue);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('snippet_list_smart', require('./components/snippet_list_smart.vue').default);
 Vue.component('main_auto', require('./components/main_auto.vue').default);
-Vue.component('testvvue', require('./components/testvvue.vue').default);
 Vue.component('snippet_detail', require('./components/snippet_detail').default);
+Vue.component('addLanguage', require('./components/addLanguage').default);
 
 
 
@@ -35,8 +39,38 @@ Vue.component('snippet_detail', require('./components/snippet_detail').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+const store = new Vuex.Store({
+    state: {
+        isHidden: false,
+        snippet_detail_id:12,
+    },
+    mutations:{
+        toggle_isHidden(state){
+            state.isHidden = !state.isHidden;
+        },
+        set_snippet_detail_id(state,id){
+            state.snippet_detail_id = id;        }
+    },
+    actions: {
+        change_isHidden(){
+            store.commit('toggle_isHidden')
+        },
+        set_snippet_detail_action(id) {
+            store.commit('set_snippet_detail_id', id)
+        }
+    },
+    getters: {
+        getIsHidden: state => {
+            return state.isHidden;
+        },
+        snippet_detail_id: state => {
+            return state.snippet_detail_id;
+        }
+    }
+})
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store,
 });
 
 

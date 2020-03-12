@@ -4,7 +4,7 @@
 @section('headline', 'Testvue')
 @section('content')
 
-    <div class="snippetlist"> <snippet_list_smart></snippet_list_smart></div>
+    <div class="adddLang"> <add-language></add-language></div>
 
 @endsection
 

@@ -21,4 +21,9 @@ class ContextController extends Controller
 
         return $contexts;
     }
+    // API
+    public function getAllContextsJson(){
+        $context = Context::all();
+        return $context->jsonSerialize();
+    }
 }

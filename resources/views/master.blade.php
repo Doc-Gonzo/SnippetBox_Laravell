@@ -23,7 +23,7 @@
     </div>
     <div class="content">
         <div class="title m-b-md">@yield('headline')</div>
-        <div class="content_wrapper">@yield('content')</div>
+        <div class="content_wrapper">@yield('content')  {{ csrf_field() }}</div>
         <div id="sidebar">
             <div class="snippetlist"> <snippet_list_smart></snippet_list_smart></div>
         </div>
