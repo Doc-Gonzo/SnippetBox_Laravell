@@ -24,11 +24,10 @@ Vue.use(Vuex);
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('snippet_list_smart', require('./components/snippet_list_smart.vue').default);
 Vue.component('main_auto', require('./components/main_auto.vue').default);
 Vue.component('snippet_detail', require('./components/snippet_detail').default);
+Vue.component('snippet_detail_smart', require('./components/snippet_detail_smart').default);
 Vue.component('addLanguage', require('./components/addLanguage').default);
 
 
@@ -42,26 +41,45 @@ Vue.component('addLanguage', require('./components/addLanguage').default);
 const store = new Vuex.Store({
     state: {
         isHidden: false,
+        detailIsHidden:false,
         snippet_detail_id:12,
+        snippet_detail:null,
+        languages: [],
     },
     mutations:{
         toggle_isHidden(state){
             state.isHidden = !state.isHidden;
         },
+        toggle_detailIsHidden(state){
+            state.detailIsHidden = !state.detailIsHidden;
+        },
         set_snippet_detail_id(state,id){
-            state.snippet_detail_id = id;        }
+            state.snippet_detail_id = id;
+        },
+        set_snippet_detail(state,snippet){
+            state.snippet_detail = snippet;
+        }
     },
     actions: {
         change_isHidden(){
             store.commit('toggle_isHidden')
         },
-        set_snippet_detail_action(id) {
+        change_detailIsHidden(){
+            store.commit('toggle_isHidden')
+        },
+        set_snippet_detail_action(state,id) {
             store.commit('set_snippet_detail_id', id)
+        },
+        set_snippet_detail(snippet){
+            store.commit('set_snippet_detail', snippet)
         }
     },
     getters: {
         getIsHidden: state => {
             return state.isHidden;
+        },
+        getDetailIsHidden: state => {
+            return state.detailIsHidden;
         },
         snippet_detail_id: state => {
             return state.snippet_detail_id;

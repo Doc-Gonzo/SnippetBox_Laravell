@@ -10,7 +10,8 @@
                         <b-select-option v-for="context1 in Contextsss" :value="context1.id" v-bind:key="context1.id">{{context1.name}}</b-select-option>
                     </b-select-option-group>
                 </b-select>
-            <b-button  v-on:click="$store.commit('set_snippet_detail_id', 15)">Abschicken</b-button>
+            <p>{{$store.getters.snippet_detail_id}}</p>
+            <b-button  v-on:click="$store.dispatch('set_snippet_detail_action', 15)">Abschicken</b-button>
         </b-form>
     </div>
 </template>
@@ -34,7 +35,7 @@
         data: function () {
             return {
                 Contextsss: [],
-                contextID: '',
+                contextID: 1,
                 langName: ''
             }
         },
