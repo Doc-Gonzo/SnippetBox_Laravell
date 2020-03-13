@@ -22,7 +22,7 @@
 
                     <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-if="checkedLangs.includes(snippet.Langname)" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
                         <transition name="fade">
-                            <a  v-if="checkedLangs.includes(snippet.Langname)" class="d-block pt-0 pb-0 text-left" :href="'/snippet_detail/' + snippet.ID" :title="snippet.Desc"> {{snippet.Name}}</a>
+                            <a  v-if="checkedLangs.includes(snippet.Langname)" class="d-block pt-0 pb-0 text-left" href="#" v-on:click="$store.dispatch('set_snippet_action',snippet.ID)" :title="snippet.Desc"> {{snippet.Name}}</a>
                         </transition>
                         <transition name="fade">
                             <b-badge  v-if="checkedLangs.includes(snippet.Langname)" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
@@ -38,7 +38,6 @@
 </template>
 
 <script>
-    import addLanguage from "./addLanguage";
     export default {
         name:'snippet_list_smart',
         mounted: function() {
@@ -141,6 +140,9 @@
         padding-top:20px !important;
         background-color:#1b1e21;
         /* border-radius:0 0 8px 8px; */
+    }
+    .b-list-group-item a {
+        cursor: pointer;
     }
     .list-group-item {
         color:yellow !important;

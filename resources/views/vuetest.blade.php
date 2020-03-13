@@ -1,7 +1,7 @@
 @extends('master')
 
-@section('title', 'Testvue')
-@section('headline', 'Testvue')
+@section('title', 'testvue')
+@section('headline', '')
 @section('content')
 
     <div class="addLang"> <snippet_detail_smart></snippet_detail_smart></div>

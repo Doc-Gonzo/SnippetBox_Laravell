@@ -17,9 +17,6 @@
 </template>
 
 <script>
-
-
-    import snippet_list_smart from "./snippet_list_smart";
     export default {
         name: "addLanguage",
         mounted: function () {
