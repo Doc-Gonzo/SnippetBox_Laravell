@@ -2084,10 +2084,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "snippet_detail_smart",
   mounted: function mounted() {
@@ -2120,34 +2116,13 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.snippet_detail_id;
     },
     detailIsHidden: function detailIsHidden() {
-      return this.$store.getters.getIsHidden;
+      return this.$store.getters.getDetailIsHidden;
     },
     snippet_detail_object: function snippet_detail_object() {
       return this.$store.getters.snippet_detail;
     }
   },
-  methods: {
-    setSnippet: function setSnippet(id) {
-      var _this2 = this;
-
-      /* API-Link mit ID herrichten */
-      var $link;
-      $link = '/snippet/' + id;
-      /* API ansprechen */
-
-      fetch($link, {
-        method: 'get'
-      }).then(function (response) {
-        return response.json();
-      }).then(function (jsonData) {
-        _this2.Snippet = jsonData;
-
-        _this2.$store.dispatch("set_snippet_detail", _this2.Snippet);
-
-        _this2.$store.dispatch("set_snippet_detail_action", _this2.Snippet.id);
-      });
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2254,9 +2229,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     uncheckAllBoxes: function uncheckAllBoxes() {
       this.checkedLangs = [];
-    },
-    toggleHidden: function toggleHidden() {
-      this.isHidden = !this.isHidden;
     }
   }
 });
@@ -42951,7 +42923,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.detail_content[data-v-65f4b2f0] {\n    width: 800px;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n", ""]);
+exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 800px;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n", ""]);
 
 // exports
 
@@ -75419,74 +75391,56 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "snippet_detail_wrapper" }, [
-    _c(
-      "div",
-      { class: _vm.snippet_detail_id },
-      [
-        _c("p", [
-          _vm._v(
-            _vm._s(_vm.snippet_detail_id) +
-              " " +
-              _vm._s(_vm.snippet_detail_object.titel)
-          )
-        ]),
-        _vm._v(" "),
-        _c("form", { attrs: { action: "/updateSnippet", method: "post" } }, [
-          _c("input", {
-            attrs: { type: "hidden", name: "snippet_id" },
-            domProps: { value: _vm.snippet_detail_object.id }
-          }),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control snippet_name",
-            attrs: { type: "text", name: "snippet_name" },
-            domProps: { value: _vm.snippet_detail_object.titel }
-          }),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "textarea",
-            {
-              staticClass: "form-control snippet_desc",
-              attrs: { name: "snippet_desc" }
-            },
-            [_vm._v(_vm._s(_vm.snippet_detail_object.desc))]
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "textarea",
-            {
-              staticClass: "form-control detail_content",
-              attrs: { name: "snippet_content" }
-            },
-            [_vm._v(_vm._s(_vm.snippet_detail_object.content))]
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("button", { staticClass: "btn-dark", attrs: { type: "submit" } }, [
-            _vm._v("Update Snippet")
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "b-button",
-          {
-            on: {
-              click: function($event) {
-                return _vm.setSnippet(15)
-              }
+    _c("div", { class: _vm.snippet_detail_id }, [
+      _c(
+        "h4",
+        {
+          on: {
+            click: function($event) {
+              return _vm.$store.commit("toggle_detailIsHidden")
             }
-          },
-          [_vm._v("Abschicken")]
-        )
-      ],
-      1
-    )
+          }
+        },
+        [_vm._v(_vm._s(_vm.snippet_detail_object.titel))]
+      ),
+      _vm._v(" "),
+      !_vm.detailIsHidden
+        ? _c("form", { attrs: { action: "/updateSnippet", method: "post" } }, [
+            _c("input", {
+              attrs: { type: "hidden", name: "snippet_id" },
+              domProps: { value: _vm.snippet_detail_object.id }
+            }),
+            _vm._v(" "),
+            _c(
+              "textarea",
+              {
+                staticClass: "form-control snippet_desc",
+                attrs: { name: "snippet_desc" }
+              },
+              [_vm._v(_vm._s(_vm.snippet_detail_object.desc))]
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "textarea",
+              {
+                staticClass: "form-control detail_content",
+                attrs: { name: "snippet_content" }
+              },
+              [_vm._v(_vm._s(_vm.snippet_detail_object.content))]
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn-dark", attrs: { type: "submit" } },
+              [_vm._v("Update Snippet")]
+            )
+          ])
+        : _vm._e()
+    ])
   ])
 }
 var staticRenderFns = []

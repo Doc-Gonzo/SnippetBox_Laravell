@@ -85,9 +85,6 @@
             },
             uncheckAllBoxes: function() {
                this.checkedLangs = [];
-            },
-            toggleHidden: function() {
-                this.isHidden = !this.isHidden;
             }
         }
     }
