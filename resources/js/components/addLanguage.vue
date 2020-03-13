@@ -11,7 +11,7 @@
                     </b-select-option-group>
                 </b-select>
             <p>{{$store.getters.snippet_detail_id}}</p>
-            <b-button  v-on:click="$store.dispatch('set_snippet_detail_action', 15)">Abschicken</b-button>
+            <b-button  v-on:click="$store.dispatch('set_snippet_action', 3)">Abschicken</b-button>
         </b-form>
     </div>
 </template>

@@ -43,7 +43,13 @@ const store = new Vuex.Store({
         isHidden: false,
         detailIsHidden:false,
         snippet_detail_id:12,
-        snippet_detail:null,
+        snippet_detail:
+            {
+                titel:'',
+                desc:'',
+                content:'',
+            }
+        ,
         languages: [],
     },
     mutations:{
@@ -56,8 +62,28 @@ const store = new Vuex.Store({
         set_snippet_detail_id(state,id){
             state.snippet_detail_id = id;
         },
-        set_snippet_detail(state,snippet){
-            state.snippet_detail = snippet;
+        set_snippet_detail(state, snippet){
+            state.snippet_detail.titel = snippet.name;
+            state.snippet_detail.desc = snippet.desc;
+            state.snippet_detail.content = snippet.snippet_content;
+        },
+
+        setSnippetMutation(state, id){
+            /* API-Link mit ID herrichten */
+            var $link;
+            $link = '/snippet/' + id;
+            /* API ansprechen */
+            fetch($link, {method:'get'})
+                .then((response) => {
+                    return response.json()
+                })
+                .then ((jsonData) => {
+                    this.snippet = jsonData;
+                    state.snippet_detail.titel = this.snippet.name;
+                    state.snippet_detail.desc = this.snippet.desc;
+                    state.snippet_detail.content = this.snippet.snippet_content;
+                    state.snippet_detail_id = this.snippet.id;
+                })
         }
     },
     actions: {
@@ -70,8 +96,11 @@ const store = new Vuex.Store({
         set_snippet_detail_action(state,id) {
             store.commit('set_snippet_detail_id', id)
         },
-        set_snippet_detail(snippet){
+        set_snippet_detail(state,snippet){
             store.commit('set_snippet_detail', snippet)
+        },
+        set_snippet_action(state, id){
+            store.commit('setSnippetMutation', id)
         }
     },
     getters: {
@@ -83,6 +112,9 @@ const store = new Vuex.Store({
         },
         snippet_detail_id: state => {
             return state.snippet_detail_id;
+        },
+        snippet_detail: state => {
+            return state.snippet_detail;
         }
     }
 })

@@ -2080,6 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "snippet_detail_smart",
   mounted: function mounted() {
@@ -2097,7 +2098,7 @@ __webpack_require__.r(__webpack_exports__);
     }).then(function (jsonData) {
       _this.Snippet = jsonData;
 
-      _this.store.dispatch(set_snippet_detail);
+      _this.$store.dispatch("set_snippet_detail", _this.Snippet);
     });
   },
 
@@ -2115,13 +2116,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.getIsHidden;
     },
     snippet_detail_object: function snippet_detail_object() {
-      this.snippet_id = this.$store.getters.snippet_detail_id;
-      this.snippet_object = this.getSnippet(this.snippet_id);
-      return this.snippet_object;
+      return this.$store.getters.snippet_detail;
     }
   },
   methods: {
-    getSnippet: function getSnippet(id) {
+    setSnippet: function setSnippet(id) {
       var _this2 = this;
 
       /* API-Link mit ID herrichten */
@@ -2134,8 +2133,11 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         return response.json();
       }).then(function (jsonData) {
-        _this2.snippet = jsonData;
-        return _this2.snippet;
+        _this2.Snippet = jsonData;
+
+        _this2.$store.dispatch("set_snippet_detail", _this2.Snippet);
+
+        _this2.$store.dispatch("set_snippet_detail_action", _this2.Snippet.id);
       });
     }
   }
@@ -75216,7 +75218,7 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  return _vm.$store.dispatch("set_snippet_detail_action", 15)
+                  return _vm.$store.dispatch("set_snippet_action", 3)
                 }
               }
             },
@@ -75363,11 +75365,32 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "snippet_detail_wrapper" }, [
-    _c("div", { class: _vm.snippet_detail_id }, [
-      _c("p", [
-        _vm._v(_vm._s(_vm.snippet_detail_id) + " " + _vm._s(_vm.Snippet.name))
-      ])
-    ])
+    _c(
+      "div",
+      { class: _vm.snippet_detail_id },
+      [
+        _c("p", [
+          _vm._v(
+            _vm._s(_vm.snippet_detail_id) +
+              " " +
+              _vm._s(_vm.snippet_detail_object)
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "b-button",
+          {
+            on: {
+              click: function($event) {
+                return _vm.setSnippet(15)
+              }
+            }
+          },
+          [_vm._v("Abschicken")]
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -88873,7 +88896,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     isHidden: false,
     detailIsHidden: false,
     snippet_detail_id: 12,
-    snippet_detail: null,
+    snippet_detail: {
+      titel: '',
+      desc: '',
+      content: ''
+    },
     languages: []
   },
   mutations: {
@@ -88887,7 +88914,29 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       state.snippet_detail_id = id;
     },
     set_snippet_detail: function set_snippet_detail(state, snippet) {
-      state.snippet_detail = snippet;
+      state.snippet_detail.titel = snippet.name;
+      state.snippet_detail.desc = snippet.desc;
+      state.snippet_detail.content = snippet.snippet_content;
+    },
+    setSnippetMutation: function setSnippetMutation(state, id) {
+      var _this = this;
+
+      /* API-Link mit ID herrichten */
+      var $link;
+      $link = '/snippet/' + id;
+      /* API ansprechen */
+
+      fetch($link, {
+        method: 'get'
+      }).then(function (response) {
+        return response.json();
+      }).then(function (jsonData) {
+        _this.snippet = jsonData;
+        state.snippet_detail.titel = _this.snippet.name;
+        state.snippet_detail.desc = _this.snippet.desc;
+        state.snippet_detail.content = _this.snippet.snippet_content;
+        state.snippet_detail_id = _this.snippet.id;
+      });
     }
   },
   actions: {
@@ -88900,8 +88949,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     set_snippet_detail_action: function set_snippet_detail_action(state, id) {
       store.commit('set_snippet_detail_id', id);
     },
-    set_snippet_detail: function set_snippet_detail(snippet) {
+    set_snippet_detail: function set_snippet_detail(state, snippet) {
       store.commit('set_snippet_detail', snippet);
+    },
+    set_snippet_action: function set_snippet_action(state, id) {
+      store.commit('setSnippetMutation', id);
     }
   },
   getters: {
@@ -88913,6 +88965,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     snippet_detail_id: function snippet_detail_id(state) {
       return state.snippet_detail_id;
+    },
+    snippet_detail: function snippet_detail(state) {
+      return state.snippet_detail;
     }
   }
 });

@@ -1,7 +1,8 @@
 <template>
     <div class="snippet_detail_wrapper">
         <div :class="snippet_detail_id">
-            <p>{{snippet_detail_id}} {{Snippet.name}}</p>
+            <p>{{snippet_detail_id}} {{snippet_detail_object}}</p>
+            <b-button  v-on:click="setSnippet(15)">Abschicken</b-button>
         </div>
     </div>
 </template>
@@ -21,7 +22,7 @@
                 })
                 .then ((jsonData) => {
                     this.Snippet = jsonData;
-                    this.store.dispatch(set_snippet_detail);
+                    this.$store.dispatch("set_snippet_detail", this.Snippet)
                 })
         },
         /* Snippet Objekt ausgeben */
@@ -38,13 +39,11 @@
                 return this.$store.getters.getIsHidden;
             },
             snippet_detail_object(){
-                this.snippet_id = this.$store.getters.snippet_detail_id;
-               this.snippet_object = this.getSnippet(this.snippet_id);
-               return this.snippet_object;
+                return this.$store.getters.snippet_detail;
             }
         },
         methods: {
-            getSnippet(id){
+            setSnippet(id){
                 /* API-Link mit ID herrichten */
                 var $link;
                 $link = '/snippet/' + id;
@@ -55,8 +54,10 @@
                         return response.json()
                     })
                     .then ((jsonData) => {
-                        this.snippet = jsonData
-                        return this.snippet
+                        this.Snippet = jsonData;
+                        this.$store.dispatch("set_snippet_detail", this.Snippet);
+                        this.$store.dispatch("set_snippet_detail_action", this.Snippet.id);
+
                     })
             }
         }
