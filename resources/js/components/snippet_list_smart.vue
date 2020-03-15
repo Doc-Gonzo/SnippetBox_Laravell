@@ -3,7 +3,7 @@
         <div>
 
             <h5 v-on:click="langListHidden = !langListHidden ">Langlist</h5>
-            <transition name="fade">
+            <transition name="list" tag="span">
                 <b-list-group v-if="!langListHidden" class="lang_list_wrapper">
                     <b-button class="smallButton" v-if="!langListHidden" v-on:click="checkAllBoxes">All</b-button>
                     <b-button class="smallButton" v-if="!langListHidden"  v-on:click="uncheckAllBoxes">None</b-button>
@@ -17,21 +17,18 @@
 
 
             <h4 v-on:click="$store.commit('toggle_isHidden')">Snippetlist</h4>
-            <transition name="fade">
+            <transition name="list" tag="span">
                 <b-list-group v-if="!isHidden" class="snippet_list_wrapper">
 
                     <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-if="checkedLangs.includes(snippet.Langname)" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
-                        <transition name="fade">
-                            <a  v-if="checkedLangs.includes(snippet.Langname)" class="d-block pt-0 pb-0 text-left" href="#" v-on:click="$store.dispatch('set_snippet_action',snippet.ID)" :title="snippet.Desc"> {{snippet.Name}}</a>
-                        </transition>
-                        <transition name="fade">
-                            <b-badge  v-if="checkedLangs.includes(snippet.Langname)" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
-                        </transition>
+
+                       <a  v-if="checkedLangs.includes(snippet.Langname)" v-bind:key="snippet.Langname" class="d-block pt-0 pb-0 text-left" href="#" v-on:click="$store.dispatch('set_snippet_action',snippet.ID)" :title="snippet.Desc"> {{snippet.Name}}</a>
+                        <b-badge  v-if="checkedLangs.includes(snippet.Langname)" v-bind:key="'Key' + snippet.LAngnamr" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
+
                     </b-list-group-item>
+
                 </b-list-group>
             </transition>
-
-
         </div>
         <add-language></add-language>
     </div>
@@ -234,4 +231,33 @@
         overflow: hidden;
         max-height: 0;
     }
+
+
+    .list-enter-active {
+        animation: add-item 1s;
+    }
+
+    .list-leave-active {
+        position: absolute;
+        animation: add-item 1s reverse;
+    }
+
+    .list-move {
+        transition: transform 1s;
+    }
+    @keyframes add-item {
+        0% {
+            opacity: 0;
+            transform: translateX(150px);
+        }
+        50% {
+            opacity: 0.5;
+            transform: translateX(-10px) skewX(20deg);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
 </style>

@@ -4,7 +4,7 @@
 @section('headline', '')
 @section('content')
 
-   <!-- <div class="addLang"> <snippet_detail_smart></snippet_detail_smart></div> -->
+   <div class="addLang"> <snippet_detail_smart></snippet_detail_smart></div>
 
 @endsection
 <!--

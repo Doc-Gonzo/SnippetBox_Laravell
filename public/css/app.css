@@ -13485,7 +13485,9 @@ input[type=color].form-control:disabled {
   right: 13px;
   top: 0px;
 }
-
+#app {
+    overflow: hidden !important;
+}
 .snippet_name,
 .snippet_desc {
   background-color: whitesmoke;

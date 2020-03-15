@@ -48,6 +48,7 @@ const store = new Vuex.Store({
                 titel:'',
                 desc:'',
                 content:'',
+                langName:'',
             }
         ,
         languages: [],
@@ -66,6 +67,7 @@ const store = new Vuex.Store({
             state.snippet_detail.titel = snippet.name;
             state.snippet_detail.desc = snippet.desc;
             state.snippet_detail.content = snippet.snippet_content;
+            state.snippet_detail.langName = snippet.coding_language_id;
         },
 
         setSnippetMutation(state, id){

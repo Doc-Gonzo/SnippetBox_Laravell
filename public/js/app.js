@@ -2084,6 +2084,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "snippet_detail_smart",
   mounted: function mounted() {
@@ -2136,9 +2139,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -42923,7 +42923,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 800px;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n", ""]);
+exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 800px;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n.fade-enter-active[data-v-65f4b2f0], .fade-leave-active[data-v-65f4b2f0] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-65f4b2f0], .fade-leave-to[data-v-65f4b2f0] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n", ""]);
 
 // exports
 
@@ -42942,7 +42942,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    /* background-color:whitesmoke;*/\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    /* border-radius: 8px 8px 0 0; */\n}\nh5[data-v-20597856] {\n    cursor:pointer;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.fadeSlow-enter-active[data-v-20597856], .fadeSlow-leave-active[data-v-20597856] {\n    transition: opacity .8s;\n    transition: height 0.3s;\n}\n.fadeSlow-enter[data-v-20597856], .fadeSlow-leave-to[data-v-20597856] /* .fadeSlow-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    /* border-radius:0 0 8px 8px; */\n}\n.b-list-group-item a[data-v-20597856] {\n    cursor: pointer;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 14px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    padding: 5px 0;\n    line-height:1.1;\n}\n.filterButton[data-v-20597856] {\n    padding-bottom: 0;\n    padding-top: 0;\n    text-align:right;\n    display:inline;\n    font-size:12px;\n}\n.filterButton label[data-v-20597856] {\n    margin-bottom:0px;\n}\n.smallButton[data-v-20597856] {\n    padding: 0;\n}\n.snippet_list_wrapper[data-v-20597856] {\n       max-height: 311px;\n       overflow-y: scroll;\n       margin-bottom:20px;\n       font-size:12px;\n}\n.lang_list_wrapper[data-v-20597856] {\n    max-height: 175px;\n    overflow-y: scroll;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n.slide-enter-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: ease-in;\n}\n.slide-leave-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n}\n.slide-enter-to[data-v-20597856], .slide-leave[data-v-20597856] {\n    max-height: 100px;\n    overflow: hidden;\n}\n.slide-enter[data-v-20597856], .slide-leave-to[data-v-20597856] {\n    overflow: hidden;\n    max-height: 0;\n}\n", ""]);
+exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    /* background-color:whitesmoke;*/\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    /* border-radius: 8px 8px 0 0; */\n}\nh5[data-v-20597856] {\n    cursor:pointer;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.fadeSlow-enter-active[data-v-20597856], .fadeSlow-leave-active[data-v-20597856] {\n    transition: opacity .8s;\n    transition: height 0.3s;\n}\n.fadeSlow-enter[data-v-20597856], .fadeSlow-leave-to[data-v-20597856] /* .fadeSlow-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    /* border-radius:0 0 8px 8px; */\n}\n.b-list-group-item a[data-v-20597856] {\n    cursor: pointer;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 14px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    padding: 5px 0;\n    line-height:1.1;\n}\n.filterButton[data-v-20597856] {\n    padding-bottom: 0;\n    padding-top: 0;\n    text-align:right;\n    display:inline;\n    font-size:12px;\n}\n.filterButton label[data-v-20597856] {\n    margin-bottom:0px;\n}\n.smallButton[data-v-20597856] {\n    padding: 0;\n}\n.snippet_list_wrapper[data-v-20597856] {\n       max-height: 311px;\n       overflow-y: scroll;\n       margin-bottom:20px;\n       font-size:12px;\n}\n.lang_list_wrapper[data-v-20597856] {\n    max-height: 175px;\n    overflow-y: scroll;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n.slide-enter-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: ease-in;\n}\n.slide-leave-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n}\n.slide-enter-to[data-v-20597856], .slide-leave[data-v-20597856] {\n    max-height: 100px;\n    overflow: hidden;\n}\n.slide-enter[data-v-20597856], .slide-leave-to[data-v-20597856] {\n    overflow: hidden;\n    max-height: 0;\n}\n.list-enter-active[data-v-20597856] {\n    -webkit-animation: add-item-data-v-20597856 1s;\n            animation: add-item-data-v-20597856 1s;\n}\n.list-leave-active[data-v-20597856] {\n    position: absolute;\n    animation: add-item-data-v-20597856 1s reverse;\n}\n.list-move[data-v-20597856] {\n    transition: transform 1s;\n}\n@-webkit-keyframes add-item-data-v-20597856 {\n0% {\n        opacity: 0;\n        transform: translateX(150px);\n}\n50% {\n        opacity: 0.5;\n        transform: translateX(-10px) skewX(20deg);\n}\n100% {\n        opacity: 1;\n        transform: translateX(0px);\n}\n}\n@keyframes add-item-data-v-20597856 {\n0% {\n        opacity: 0;\n        transform: translateX(150px);\n}\n50% {\n        opacity: 0.5;\n        transform: translateX(-10px) skewX(20deg);\n}\n100% {\n        opacity: 1;\n        transform: translateX(0px);\n}\n}\n\n", ""]);
 
 // exports
 
@@ -75485,7 +75485,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "transition",
-            { attrs: { name: "fade" } },
+            { attrs: { name: "list", tag: "span" } },
             [
               !_vm.langListHidden
                 ? _c(
@@ -75588,7 +75588,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "transition",
-            { attrs: { name: "fade" } },
+            { attrs: { name: "list", tag: "span" } },
             [
               !_vm.isHidden
                 ? _c(
@@ -75605,48 +75605,38 @@ var render = function() {
                               class: { "snippet.Langname": true }
                             },
                             [
-                              _c("transition", { attrs: { name: "fade" } }, [
-                                _vm.checkedLangs.includes(snippet.Langname)
-                                  ? _c(
-                                      "a",
-                                      {
-                                        staticClass:
-                                          "d-block pt-0 pb-0 text-left",
-                                        attrs: {
-                                          href: "#",
-                                          title: snippet.Desc
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.$store.dispatch(
-                                              "set_snippet_action",
-                                              snippet.ID
-                                            )
-                                          }
+                              _vm.checkedLangs.includes(snippet.Langname)
+                                ? _c(
+                                    "a",
+                                    {
+                                      key: snippet.Langname,
+                                      staticClass:
+                                        "d-block pt-0 pb-0 text-left",
+                                      attrs: { href: "#", title: snippet.Desc },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$store.dispatch(
+                                            "set_snippet_action",
+                                            snippet.ID
+                                          )
                                         }
-                                      },
-                                      [_vm._v(" " + _vm._s(snippet.Name))]
-                                    )
-                                  : _vm._e()
-                              ]),
+                                      }
+                                    },
+                                    [_vm._v(" " + _vm._s(snippet.Name))]
+                                  )
+                                : _vm._e(),
                               _vm._v(" "),
-                              _c(
-                                "transition",
-                                { attrs: { name: "fade" } },
-                                [
-                                  _vm.checkedLangs.includes(snippet.Langname)
-                                    ? _c(
-                                        "b-badge",
-                                        {
-                                          class: snippet.Langname,
-                                          attrs: { variant: "primary" }
-                                        },
-                                        [_vm._v(_vm._s(snippet.Langname))]
-                                      )
-                                    : _vm._e()
-                                ],
-                                1
-                              )
+                              _vm.checkedLangs.includes(snippet.Langname)
+                                ? _c(
+                                    "b-badge",
+                                    {
+                                      key: "Key" + snippet.LAngnamr,
+                                      class: snippet.Langname,
+                                      attrs: { variant: "primary" }
+                                    },
+                                    [_vm._v(_vm._s(snippet.Langname))]
+                                  )
+                                : _vm._e()
                             ],
                             1
                           )
@@ -88957,7 +88947,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     snippet_detail: {
       titel: '',
       desc: '',
-      content: ''
+      content: '',
+      langName: ''
     },
     languages: []
   },
@@ -88975,6 +88966,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       state.snippet_detail.titel = snippet.name;
       state.snippet_detail.desc = snippet.desc;
       state.snippet_detail.content = snippet.snippet_content;
+      state.snippet_detail.langName = snippet.coding_language_id;
     },
     setSnippetMutation: function setSnippetMutation(state, id) {
       var _this = this;

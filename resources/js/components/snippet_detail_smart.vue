@@ -1,13 +1,16 @@
 <template>
     <div class="snippet_detail_wrapper">
         <div :class="snippet_detail_id">
+
             <h4 v-on:click="$store.commit('toggle_detailIsHidden')">{{snippet_detail_object.titel}}</h4>
+
             <form action="/updateSnippet" method="post"  v-if="!detailIsHidden" >
                 <input type="hidden" name="snippet_id" :value="snippet_detail_object.id">
-                <textarea class="form-control snippet_desc" name="snippet_desc">{{snippet_detail_object.desc}}</textarea><br><br>
-                <textarea class="form-control detail_content" name="snippet_content">{{snippet_detail_object.content}}</textarea><br><br>
+               <textarea class="form-control snippet_desc" name="snippet_desc">{{snippet_detail_object.desc}}</textarea><br><br>
+               <textarea class="form-control detail_content" name="snippet_content">{{snippet_detail_object.content}}</textarea><br><br>
                 <button type="submit" class="btn-dark">Update Snippet</button>
             </form>
+
         </div>
     </div>
 </template>
@@ -64,5 +67,12 @@
         color: yellow;
         letter-spacing: 1.4px;
         font-size: smaller;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 1s, height .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+        height: 0;
     }
 </style>
