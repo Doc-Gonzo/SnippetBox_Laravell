@@ -19,11 +19,10 @@
             <h4 v-on:click="$store.commit('toggle_isHidden')">Snippetlist</h4>
             <transition name="list" tag="span">
                 <b-list-group v-if="!isHidden" class="snippet_list_wrapper">
-
                     <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-if="checkedLangs.includes(snippet.Langname)" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
 
-                       <a  v-if="checkedLangs.includes(snippet.Langname)" v-bind:key="snippet.Langname" class="d-block pt-0 pb-0 text-left" href="#" v-on:click="$store.dispatch('set_snippet_action',snippet.ID)" :title="snippet.Desc"> {{snippet.Name}}</a>
-                        <b-badge  v-if="checkedLangs.includes(snippet.Langname)" v-bind:key="'Key' + snippet.LAngnamr" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
+                       <a v-bind:key="snippet.Langname" class="d-block pt-0 pb-0 text-left" href="#" v-on:click="$store.dispatch('set_snippet_action',snippet.ID)" :title="snippet.Desc"> {{snippet.Name}}</a>
+                        <b-badge v-bind:key="'Key' + snippet.LAngnamr" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
 
                     </b-list-group-item>
 

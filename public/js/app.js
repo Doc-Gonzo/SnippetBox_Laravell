@@ -2174,7 +2174,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'snippet_list_smart',
   mounted: function mounted() {
@@ -75605,38 +75604,33 @@ var render = function() {
                               class: { "snippet.Langname": true }
                             },
                             [
-                              _vm.checkedLangs.includes(snippet.Langname)
-                                ? _c(
-                                    "a",
-                                    {
-                                      key: snippet.Langname,
-                                      staticClass:
-                                        "d-block pt-0 pb-0 text-left",
-                                      attrs: { href: "#", title: snippet.Desc },
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.$store.dispatch(
-                                            "set_snippet_action",
-                                            snippet.ID
-                                          )
-                                        }
-                                      }
-                                    },
-                                    [_vm._v(" " + _vm._s(snippet.Name))]
-                                  )
-                                : _vm._e(),
+                              _c(
+                                "a",
+                                {
+                                  key: snippet.Langname,
+                                  staticClass: "d-block pt-0 pb-0 text-left",
+                                  attrs: { href: "#", title: snippet.Desc },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$store.dispatch(
+                                        "set_snippet_action",
+                                        snippet.ID
+                                      )
+                                    }
+                                  }
+                                },
+                                [_vm._v(" " + _vm._s(snippet.Name))]
+                              ),
                               _vm._v(" "),
-                              _vm.checkedLangs.includes(snippet.Langname)
-                                ? _c(
-                                    "b-badge",
-                                    {
-                                      key: "Key" + snippet.LAngnamr,
-                                      class: snippet.Langname,
-                                      attrs: { variant: "primary" }
-                                    },
-                                    [_vm._v(_vm._s(snippet.Langname))]
-                                  )
-                                : _vm._e()
+                              _c(
+                                "b-badge",
+                                {
+                                  key: "Key" + snippet.LAngnamr,
+                                  class: snippet.Langname,
+                                  attrs: { variant: "primary" }
+                                },
+                                [_vm._v(_vm._s(snippet.Langname))]
+                              )
                             ],
                             1
                           )

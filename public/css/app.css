@@ -13486,7 +13486,7 @@ input[type=color].form-control:disabled {
   top: 0px;
 }
 #app {
-    overflow: hidden !important;
+    overflow:hidden !important;
 }
 .snippet_name,
 .snippet_desc {
