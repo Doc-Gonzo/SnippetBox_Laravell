@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "~bootstrap-vue/src/index";
+body {
+    overflow:hidden;
+}
 .title {
     font-size: 45px !important;
 }
@@ -43,5 +46,15 @@
 }
 .snippetlist {
     margin-bottom: 40px;
+}
+.widgets {
+
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 45px;
+}
+.widgets {
+
 }
 

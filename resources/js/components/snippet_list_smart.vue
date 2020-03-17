@@ -29,7 +29,7 @@
                 </b-list-group>
             </transition>
         </div>
-        <add-language></add-language>
+
     </div>
 </template>
 
@@ -103,6 +103,9 @@
     }
     h5 {
         cursor:pointer;
+    }
+    .lang_list_wrapper {
+        width: 300px;
     }
     .snippetlist {
         position: absolute;

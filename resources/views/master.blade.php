@@ -16,7 +16,7 @@
         </div>
     @endif
     <div id="main_menu_wrapper">
-       <main_auto></main_auto>
+       <main_auto_singlepage></main_auto_singlepage>
     </div>
     <div id="menu_login">
         @include('layouts/navbar')
@@ -27,6 +27,9 @@
         <div id="sidebar">
             <div class="snippetlist"> <snippet_list_smart></snippet_list_smart></div>
         </div>
+    </div>
+    <div class="widgets">
+        <add-language></add-language>
     </div>
 </div>
 </body>

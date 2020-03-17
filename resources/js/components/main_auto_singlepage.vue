@@ -1,40 +1,40 @@
 <template>
     <div class="main_nav_wrapper">
         <ul class="main_nav ">
-            <li v-for="element in menu_elements" v-bind:key="element.text"><a :href="element.link" :title="element.text">{{element.text}}</a> </li>
+            <li v-for="element in menu_elements" v-bind:key="element.text"><a  v-bind:key="element.text + 'Link'" v-on:click="$store.dispatch('change_LanguageIsHidden')" :title="element.text">{{element.text}}</a> </li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        name: "main_auto",
+        name: "main_auto_singlepage",
         data: function () {
             return {
                 menu_elements:[
                     {
                         text: 'Snippet anlegen',
-                        link: '/addSnippet',
+                        link: '$store.dispatch("change_LanguageIsHidden")',
                     },
                     {
                         text: 'Sprache anlegen',
-                        link: '/addLanguage',
+                        link: '$store.dispatch("change_LanguageIsHidden")',
                     },
                     {
                         text: 'Sammlunganlegen',
-                        link: '/addSammlung',
+                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
                     },
                     {
                         text: 'Context anlegen',
-                        link: '/addContext',
+                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
                     },
                     {
                         text: 'API getAllSnippets',
-                        link: '/getAllSnippets',
+                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
                     },
                     {
                         text: 'Vuetest',
-                        link: '/testvue',
+                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
                     }
                 ]
             }
@@ -73,6 +73,7 @@
         text-decoration:none;
         display: block;
         transition: 0.4s;
+        cursor:pointer;
     }
     .main_nav_wrapper ul li a:hover {
         color: #2fa360;

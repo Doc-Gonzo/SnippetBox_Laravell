@@ -26,6 +26,7 @@ Vue.use(Vuex);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('snippet_list_smart', require('./components/snippet_list_smart.vue').default);
 Vue.component('main_auto', require('./components/main_auto.vue').default);
+Vue.component('main_auto_singlepage', require('./components/main_auto_singlepage.vue').default);
 Vue.component('snippet_detail', require('./components/snippet_detail').default);
 Vue.component('snippet_detail_smart', require('./components/snippet_detail_smart').default);
 Vue.component('addLanguage', require('./components/addLanguage').default);
@@ -42,6 +43,7 @@ const store = new Vuex.Store({
     state: {
         isHidden: false,
         detailIsHidden:false,
+        LanguageIsHidden:true,
         snippet_detail_id:12,
         snippet_detail:
             {
@@ -56,6 +58,9 @@ const store = new Vuex.Store({
     mutations:{
         toggle_isHidden(state){
             state.isHidden = !state.isHidden;
+        },
+        toggle_LanguageIsHidden(state){
+            state.LanguageIsHidden = !state.LanguageIsHidden;
         },
         toggle_detailIsHidden(state){
             state.detailIsHidden = !state.detailIsHidden;
@@ -95,6 +100,9 @@ const store = new Vuex.Store({
         change_detailIsHidden(){
             store.commit('toggle_isHidden')
         },
+        change_LanguageIsHidden(){
+            store.commit('toggle_LanguageIsHidden')
+        },
         set_snippet_detail_action(state,id) {
             store.commit('set_snippet_detail_id', id)
         },
@@ -111,6 +119,9 @@ const store = new Vuex.Store({
         },
         getDetailIsHidden: state => {
             return state.detailIsHidden;
+        },
+        getLanguageIsHidden: state => {
+            return state.LanguageIsHidden;
         },
         snippet_detail_id: state => {
             return state.snippet_detail_id;

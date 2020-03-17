@@ -13476,6 +13476,10 @@ input[type=color].form-control:disabled {
   vertical-align: text-bottom;
 }
 
+body {
+  overflow: hidden;
+}
+
 .title {
   font-size: 45px !important;
 }
@@ -13485,9 +13489,7 @@ input[type=color].form-control:disabled {
   right: 13px;
   top: 0px;
 }
-#app {
-    overflow:hidden !important;
-}
+
 .snippet_name,
 .snippet_desc {
   background-color: whitesmoke;
@@ -13521,5 +13523,12 @@ input[type=color].form-control:disabled {
 
 .snippetlist {
   margin-bottom: 40px;
+}
+
+.widgets {
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 45px;
 }
 
