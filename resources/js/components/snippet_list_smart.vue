@@ -15,7 +15,6 @@
                 </b-list-group>
             </transition>
 
-
             <h4 v-on:click="$store.commit('toggle_isHidden')">Snippetlist</h4>
             <transition name="list" tag="span">
                 <b-list-group v-if="!isHidden" class="snippet_list_wrapper">

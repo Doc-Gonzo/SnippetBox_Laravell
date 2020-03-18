@@ -30,6 +30,8 @@
     </div>
     <div class="widgets">
         <add-language></add-language>
+        <add-sammlung></add-sammlung>
+        <add-context></add-context>
     </div>
 </div>
 </body>

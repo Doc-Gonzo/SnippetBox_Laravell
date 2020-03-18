@@ -30,6 +30,8 @@ Vue.component('main_auto_singlepage', require('./components/main_auto_singlepage
 Vue.component('snippet_detail', require('./components/snippet_detail').default);
 Vue.component('snippet_detail_smart', require('./components/snippet_detail_smart').default);
 Vue.component('addLanguage', require('./components/addLanguage').default);
+Vue.component('addSammlung', require('./components/addSammlung').default);
+Vue.component('addContext', require('./components/addContext').default);
 
 
 
@@ -44,6 +46,8 @@ const store = new Vuex.Store({
         isHidden: false,
         detailIsHidden:false,
         LanguageIsHidden:true,
+        SammlungIsHidden:true,
+        ContextIsHidden:true,
         snippet_detail_id:12,
         snippet_detail:
             {
@@ -61,6 +65,12 @@ const store = new Vuex.Store({
         },
         toggle_LanguageIsHidden(state){
             state.LanguageIsHidden = !state.LanguageIsHidden;
+        },
+        toggle_SammlungIsHidden(state){
+            state.SammlungIsHidden = !state.SammlungIsHidden;
+        },
+        toggle_ContextIsHidden(state){
+            state.ContextIsHidden = !state.ContextIsHidden;
         },
         toggle_detailIsHidden(state){
             state.detailIsHidden = !state.detailIsHidden;
@@ -103,6 +113,12 @@ const store = new Vuex.Store({
         change_LanguageIsHidden(){
             store.commit('toggle_LanguageIsHidden')
         },
+        change_SammlungIsHidden(){
+            store.commit('toggle_SammlungIsHidden')
+        },
+        change_ContextIsHidden(){
+            store.commit('toggle_ContextIsHidden')
+        },
         set_snippet_detail_action(state,id) {
             store.commit('set_snippet_detail_id', id)
         },
@@ -122,6 +138,12 @@ const store = new Vuex.Store({
         },
         getLanguageIsHidden: state => {
             return state.LanguageIsHidden;
+        },
+        getSammlungIsHidden: state => {
+            return state.SammlungIsHidden;
+        },
+        getContextIsHidden: state => {
+            return state.ContextIsHidden;
         },
         snippet_detail_id: state => {
             return state.snippet_detail_id;

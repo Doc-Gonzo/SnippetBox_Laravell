@@ -1,7 +1,11 @@
 <template>
     <div class="main_nav_wrapper">
         <ul class="main_nav ">
-            <li v-for="element in menu_elements" v-bind:key="element.text"><a  v-bind:key="element.text + 'Link'" v-on:click="$store.dispatch('change_LanguageIsHidden')" :title="element.text">{{element.text}}</a> </li>
+            <li v-bind:key="'Sprache anlegen'"><a  v-bind:key="'Sprache anlegen'" v-on:click="$store.dispatch('change_LanguageIsHidden')" :title="'Sprache anlegen'">Sprache anlegen</a> </li>
+            <li  v-bind:key="'Sammlung anlegen'"><a  v-bind:key="'Sammlung anlegen'" v-on:click="$store.dispatch('change_SammlungIsHidden')" :title="'Sammlung anlegen'">Sammlung anlegen</a> </li>
+            <li  v-bind:key="'Context anlegen'"><a  v-bind:key="'Context anlegen'" v-on:click="$store.dispatch('change_ContextIsHidden')" :title="'Context anlegen'">Context anlegen</a> </li>
+            <li  v-bind:key="'Testvue'"><a  v-bind:key="'test'" href="/testvue" :title="'Test'">VUE Test</a> </li>
+            <li  v-bind:key="'addDSnippet'"><a  v-bind:key="'addSnippet'" href="/addSnippet" :title="'Add Snippet'">Snippet anlegen</a> </li>
         </ul>
     </div>
 </template>
@@ -10,34 +14,7 @@
     export default {
         name: "main_auto_singlepage",
         data: function () {
-            return {
-                menu_elements:[
-                    {
-                        text: 'Snippet anlegen',
-                        link: '$store.dispatch("change_LanguageIsHidden")',
-                    },
-                    {
-                        text: 'Sprache anlegen',
-                        link: '$store.dispatch("change_LanguageIsHidden")',
-                    },
-                    {
-                        text: 'Sammlunganlegen',
-                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
-                    },
-                    {
-                        text: 'Context anlegen',
-                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
-                    },
-                    {
-                        text: 'API getAllSnippets',
-                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
-                    },
-                    {
-                        text: 'Vuetest',
-                        link: "v-on:click='$store.dispatch('change_LanguageIsHidden')'",
-                    }
-                ]
-            }
+            return {}
         },
         computed: {
             isHidden() {
@@ -48,6 +25,12 @@
             },
             LanguageIsHidden() {
                 return this.$store.getters.getLanguageIsHidden;
+            },
+            SammlungIsHidden() {
+                return this.$store.getters.getSammlungIsHidden;
+            },
+            ContextIsHidden() {
+                return this.$store.getters.getContextIsHidden;
             },
         },
     }
