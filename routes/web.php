@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::post('/addContext/', 'ContextController@create')->middleware('auth');
+Route::post('/addContextSingle/', 'ContextController@createSingle')->middleware('auth');
 Route::get('/addContext/',  function () {
     return view('addContext');
 })->middleware('auth');
@@ -36,6 +37,8 @@ Route::get('/getLanguages/', 'LanguageController@getAllLanguages')->middleware('
 
 
 Route::post('/addSammlung/', 'SammlungController@create')->middleware('auth');
+Route::post('/addSammlungSingle/', 'SammlungController@createSingle')->middleware('auth');
+
 Route::get('/addSammlung/',  function () {
     return view('addSammlung');
 })->middleware('auth');

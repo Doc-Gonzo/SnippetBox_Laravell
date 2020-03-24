@@ -1930,12 +1930,29 @@ __webpack_require__.r(__webpack_exports__);
     return {
       Contextsss: [],
       contextID: 1,
-      langName: ''
+      langName: '',
+      context: {
+        name: ''
+      }
     };
   },
   computed: {
     ContextIsHidden: function ContextIsHidden() {
       return this.$store.getters.getContextIsHidden;
+    },
+    user_id: function user_id() {
+      return this.$store.getters.get_user_id;
+    }
+  },
+  methods: {
+    createContext: function createContext() {
+      if (this.context.name !== '') {
+        this.$store.dispatch('createContext', this.context.name);
+        this.context.name = '';
+        alert('Kontext erfolgreich angelegt!');
+      } else {
+        alert('Kontext darf nicht leer sein!');
+      }
     }
   }
 });
@@ -2043,8 +2060,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       Contextsss: [],
       contextID: 1,
-      langName: ''
+      langName: '',
+      sammlung: {
+        name: '',
+        user_id: '1'
+      }
     };
+  },
+  methods: {
+    createSammlung: function createSammlung(sammlung) {
+      this.$store.dispatch('createSammlung', sammlung);
+    }
   },
   computed: {
     SammlungIsHidden: function SammlungIsHidden() {
@@ -75487,18 +75513,13 @@ var render = function() {
                 _c("label"),
                 _vm._v(" "),
                 _c("b-input", {
-                  attrs: {
-                    type: "text",
-                    value: _vm.contextName,
-                    name: "name",
-                    placeholder: "Name"
-                  },
+                  attrs: { type: "text", name: "name", placeholder: "Name" },
                   model: {
-                    value: _vm.contextName,
+                    value: _vm.context.name,
                     callback: function($$v) {
-                      _vm.contextName = $$v
+                      _vm.$set(_vm.context, "name", $$v)
                     },
-                    expression: "contextName"
+                    expression: "context.name"
                   }
                 }),
                 _vm._v(" "),
@@ -75508,17 +75529,9 @@ var render = function() {
                   "div",
                   { staticClass: "text-center" },
                   [
-                    _c(
-                      "b-button",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.$store.dispatch("set_snippet_action", 3)
-                          }
-                        }
-                      },
-                      [_vm._v("Abschicken")]
-                    )
+                    _c("b-button", { on: { click: _vm.createContext } }, [
+                      _vm._v("Abschicken")
+                    ])
                   ],
                   1
                 )
@@ -75678,18 +75691,13 @@ var render = function() {
                 _c("label"),
                 _vm._v(" "),
                 _c("b-input", {
-                  attrs: {
-                    type: "text",
-                    value: _vm.sammlungName,
-                    name: "name",
-                    placeholder: "Name"
-                  },
+                  attrs: { type: "text", name: "name", placeholder: "Name" },
                   model: {
-                    value: _vm.sammlungName,
+                    value: _vm.sammlung.name,
                     callback: function($$v) {
-                      _vm.sammlungName = $$v
+                      _vm.$set(_vm.sammlung, "name", $$v)
                     },
-                    expression: "sammlungName"
+                    expression: "sammlung.name"
                   }
                 }),
                 _vm._v(" "),
@@ -75704,7 +75712,7 @@ var render = function() {
                       {
                         on: {
                           click: function($event) {
-                            return _vm.$store.dispatch("set_snippet_action", 3)
+                            _vm.createSammlung, _vm.sammlung
                           }
                         }
                       },
@@ -89489,6 +89497,7 @@ Vue.component('addContext', __webpack_require__(/*! ./components/addContext */ "
 
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
+    user_id: 1,
     isHidden: false,
     detailIsHidden: false,
     LanguageIsHidden: true,
@@ -89573,11 +89582,32 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     set_snippet_action: function set_snippet_action(state, id) {
       store.commit('setSnippetMutation', id);
+    },
+    createSammlung: function createSammlung(_ref, sammlung) {
+      var commit = _ref.commit;
+      axios.post('/addSammlungSingle', sammlung).then(function (res) {
+        commit('CREATE_POST', res.data);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    createContext: function createContext(_ref2, context_name) {
+      var commit = _ref2.commit;
+      axios.post('/addContextSingle', {
+        name: context_name
+      }).then(function (response) {
+        currentObj.output = response.data;
+      })["catch"](function (error) {
+        currentObj.output = error;
+      });
     }
   },
   getters: {
     getIsHidden: function getIsHidden(state) {
       return state.isHidden;
+    },
+    get_user_id: function get_user_id(state) {
+      return state.user_id;
     },
     getDetailIsHidden: function getDetailIsHidden(state) {
       return state.detailIsHidden;

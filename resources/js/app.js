@@ -43,6 +43,7 @@ Vue.component('addContext', require('./components/addContext').default);
 
 const store = new Vuex.Store({
     state: {
+        user_id:1,
         isHidden: false,
         detailIsHidden:false,
         LanguageIsHidden:true,
@@ -127,11 +128,34 @@ const store = new Vuex.Store({
         },
         set_snippet_action(state, id){
             store.commit('setSnippetMutation', id)
-        }
+        },
+        createSammlung({commit}, sammlung) {
+                axios.post('/addSammlungSingle', sammlung)
+                    .then(res => {
+                        commit('CREATE_POST', res.data)
+                    }).catch(err => {
+                    console.log(err)
+                })
+            },
+        createContext({commit}, context_name) {
+            axios.post('/addContextSingle', {
+                name: context_name,
+
+            })
+                .then(function (response) {
+                    currentObj.output = response.data;
+                })
+                .catch(function (error) {
+                    currentObj.output = error;
+                });
+        },
     },
     getters: {
         getIsHidden: state => {
             return state.isHidden;
+        },
+        get_user_id: state => {
+            return state.user_id;
         },
         getDetailIsHidden: state => {
             return state.detailIsHidden;

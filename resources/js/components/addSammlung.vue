@@ -4,10 +4,10 @@
             <b-form v-if="!SammlungIsHidden">
                 <h4>add collection</h4>
                 <label></label>
-                <b-input type="text"  v-model="sammlungName" v-bind:value="sammlungName" name="name" placeholder="Name"></b-input>
+                <b-input type="text"  v-model="sammlung.name"  name="name" placeholder="Name"></b-input>
                 <label></label>
                 <div class="text-center">
-                    <b-button class="" v-on:click="$store.dispatch('set_snippet_action', 3)">Abschicken</b-button>
+                    <b-button class="" v-on:click="createSammlung, sammlung">Abschicken</b-button>
                 </div>
             </b-form>
         </div>
@@ -21,7 +21,16 @@
             return {
                 Contextsss: [],
                 contextID: 1,
-                langName: ''
+                langName: '',
+                sammlung: {
+                    name: '',
+                    user_id:'1'
+                }
+            }
+        },
+        methods: {
+            createSammlung(sammlung) {
+                this.$store.dispatch('createSammlung', sammlung)
             }
         },
         computed: {
@@ -30,6 +39,7 @@
             },
         },
     }
+
 </script>
 
 <style scoped>

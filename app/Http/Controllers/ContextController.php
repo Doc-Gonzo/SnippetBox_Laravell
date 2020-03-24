@@ -16,6 +16,11 @@ class ContextController extends Controller
         // Leite auf Home weiter
         return redirect('/addContext');
     }
+    public function createSingle(Request $request){
+        $context = new Context();
+        $context->name = $request->name;
+        $context->save();
+    }
     public function getAllContexts(){
         $contexts = Context::all();
 

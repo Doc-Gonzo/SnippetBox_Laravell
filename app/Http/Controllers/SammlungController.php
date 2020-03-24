@@ -16,4 +16,11 @@ class SammlungController extends Controller
         // Leite auf Home weiter
         return redirect('/addSammlung');
     }
+    public function createSingle(Request $request){
+        $sammlung = new Sammlung();
+        $sammlung->name = $request->name;
+        $sammlung->user_id = $request->user_id;
+
+        $sammlung->save();
+    }
 }
