@@ -149,10 +149,10 @@ const store = new Vuex.Store({
                     currentObj.output = error;
                 });
         },
-        createLanguage({commit}, name, context_id) {
-            axios.post('/addLanguageSingle', {
-                name: name,
-                context_id: context_id,
+        createLanguage({commit}, language_object) {
+            axios.post('/addLanguageSingle',{
+                    name: language_object.name,
+                    context_id: language_object.context_id,
             })
                 .then(function (response) {
                     currentObj.output = response.data;

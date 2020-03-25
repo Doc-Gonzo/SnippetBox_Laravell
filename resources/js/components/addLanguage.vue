@@ -56,7 +56,12 @@
         methods: {
             createLanguage() {
                 if(this.language.name !== '') {
-                    this.$store.dispatch('createLanguage', this.language.name , this.language.context_id);
+                    let language_object = {
+                        name: this.language.name,
+                        context_id: this.language.context_id,
+                    }
+
+                    this.$store.dispatch('createLanguage', language_object);
                     this.language.name = '';
                     this.language.context_id = '';
                     alert('Sprache erfolgreich angelegt!');

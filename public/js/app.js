@@ -2030,7 +2030,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     createLanguage: function createLanguage() {
       if (this.language.name !== '') {
-        this.$store.dispatch('createLanguage', this.language.name, this.language.context_id);
+        var language_object = {
+          name: this.language.name,
+          context_id: this.language.context_id
+        };
+        this.$store.dispatch('createLanguage', language_object);
         this.language.name = '';
         this.language.context_id = '';
         alert('Sprache erfolgreich angelegt!');
@@ -89602,11 +89606,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         currentObj.output = error;
       });
     },
-    createLanguage: function createLanguage(_ref3, name, context_id) {
+    createLanguage: function createLanguage(_ref3, language_object) {
       var commit = _ref3.commit;
       axios.post('/addLanguageSingle', {
-        name: name,
-        context_id: context_id
+        name: language_object.name,
+        context_id: language_object.context_id
       }).then(function (response) {
         currentObj.output = response.data;
       })["catch"](function (error) {
