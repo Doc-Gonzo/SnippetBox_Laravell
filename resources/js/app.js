@@ -149,6 +149,18 @@ const store = new Vuex.Store({
                     currentObj.output = error;
                 });
         },
+        createLanguage({commit}, name, context_id) {
+            axios.post('/addLanguageSingle', {
+                name: name,
+                context_id: context_id,
+            })
+                .then(function (response) {
+                    currentObj.output = response.data;
+                })
+                .catch(function (error) {
+                    currentObj.output = error;
+                });
+        },
     },
     getters: {
         getIsHidden: state => {

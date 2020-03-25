@@ -25,10 +25,8 @@ Route::get('/addContext/',  function () {
 Route::get('/getAllContextsJson/', 'ContextController@getAllContextsJson')->middleware('auth');
 
 
-
-
-
 Route::post('/addLanguage/', 'LanguageController@create')->middleware('auth');
+Route::post('/addLanguageSingle/', 'LanguageController@createSingle')->middleware('auth');
 Route::get('/addLanguage/',  function () {
     return view('addLanguage');
 })->middleware('auth');

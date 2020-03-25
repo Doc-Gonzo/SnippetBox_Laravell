@@ -4,16 +4,16 @@
         <b-form v-if="!LanguageIsHidden">
             <h4>add language</h4>
             <label></label>
-            <b-input type="text"  v-model="langName" v-bind:value="langName" name="name" placeholder="Name"></b-input>
+            <b-input type="text"  v-model="language.name" name="name" placeholder="Name"></b-input>
             <label></label>
-                <b-select name="context_id"   v-model="contextID">
+                <b-select name="context_id"   v-model="language.context_id">
                     <b-select-option-group label="Context">
                         <b-select-option>Context wählen</b-select-option>
                         <b-select-option v-for="context1 in Contextsss" :value="context1.id" v-bind:key="context1.id">{{context1.name}}</b-select-option>
                     </b-select-option-group>
                 </b-select>
             <div class="text-center">
-                <b-button class="" v-on:click="$store.dispatch('set_snippet_action', 3)">Abschicken</b-button>
+                <b-button class="" v-on:click="createLanguage">Abschicken</b-button>
             </div>
         </b-form>
         </div>
@@ -36,8 +36,10 @@
         data: function () {
             return {
                 Contextsss: [],
-                contextID: 1,
-                langName: ''
+                language: {
+                    name: '',
+                    context_id: '',
+                }
             }
         },
         computed: {
@@ -49,6 +51,19 @@
             },
             LanguageIsHidden() {
                 return this.$store.getters.getLanguageIsHidden;
+            },
+        },
+        methods: {
+            createLanguage() {
+                if(this.language.name !== '') {
+                    this.$store.dispatch('createLanguage', this.language.name , this.language.context_id);
+                    this.language.name = '';
+                    this.language.context_id = '';
+                    alert('Sprache erfolgreich angelegt!');
+                }
+                else {
+                    alert('Name darf nicht leer sein!');
+                }
             },
         },
     }

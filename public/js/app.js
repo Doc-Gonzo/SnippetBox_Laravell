@@ -2010,8 +2010,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       Contextsss: [],
-      contextID: 1,
-      langName: ''
+      language: {
+        name: '',
+        context_id: ''
+      }
     };
   },
   computed: {
@@ -2023,6 +2025,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     LanguageIsHidden: function LanguageIsHidden() {
       return this.$store.getters.getLanguageIsHidden;
+    }
+  },
+  methods: {
+    createLanguage: function createLanguage() {
+      if (this.language.name !== '') {
+        this.$store.dispatch('createLanguage', this.language.name, this.language.context_id);
+        this.language.name = '';
+        this.language.context_id = '';
+        alert('Sprache erfolgreich angelegt!');
+      } else {
+        alert('Name darf nicht leer sein!');
+      }
     }
   }
 });
@@ -75579,18 +75593,13 @@ var render = function() {
                 _c("label"),
                 _vm._v(" "),
                 _c("b-input", {
-                  attrs: {
-                    type: "text",
-                    value: _vm.langName,
-                    name: "name",
-                    placeholder: "Name"
-                  },
+                  attrs: { type: "text", name: "name", placeholder: "Name" },
                   model: {
-                    value: _vm.langName,
+                    value: _vm.language.name,
                     callback: function($$v) {
-                      _vm.langName = $$v
+                      _vm.$set(_vm.language, "name", $$v)
                     },
-                    expression: "langName"
+                    expression: "language.name"
                   }
                 }),
                 _vm._v(" "),
@@ -75601,11 +75610,11 @@ var render = function() {
                   {
                     attrs: { name: "context_id" },
                     model: {
-                      value: _vm.contextID,
+                      value: _vm.language.context_id,
                       callback: function($$v) {
-                        _vm.contextID = $$v
+                        _vm.$set(_vm.language, "context_id", $$v)
                       },
-                      expression: "contextID"
+                      expression: "language.context_id"
                     }
                   },
                   [
@@ -75633,17 +75642,9 @@ var render = function() {
                   "div",
                   { staticClass: "text-center" },
                   [
-                    _c(
-                      "b-button",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.$store.dispatch("set_snippet_action", 3)
-                          }
-                        }
-                      },
-                      [_vm._v("Abschicken")]
-                    )
+                    _c("b-button", { on: { click: _vm.createLanguage } }, [
+                      _vm._v("Abschicken")
+                    ])
                   ],
                   1
                 )
@@ -89595,6 +89596,17 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       var commit = _ref2.commit;
       axios.post('/addContextSingle', {
         name: context_name
+      }).then(function (response) {
+        currentObj.output = response.data;
+      })["catch"](function (error) {
+        currentObj.output = error;
+      });
+    },
+    createLanguage: function createLanguage(_ref3, name, context_id) {
+      var commit = _ref3.commit;
+      axios.post('/addLanguageSingle', {
+        name: name,
+        context_id: context_id
       }).then(function (response) {
         currentObj.output = response.data;
       })["catch"](function (error) {

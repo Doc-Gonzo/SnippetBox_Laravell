@@ -8,7 +8,7 @@
 
     <span>Remember, Remember, the 5th of november</span>
 
-    <form action="/addLanguage" method="post">
+    <form action="/addLanguageSingle" method="post">
         <input type="text" name="name" placeholder="Name">
         <select name="context_id">
             <?php $contexts = \App\Context::all(); ?>
