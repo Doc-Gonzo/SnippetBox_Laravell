@@ -19,14 +19,14 @@
             <transition name="list" tag="span">
                 <b-list-group v-if="!isHidden" class="snippet_list_wrapper">
                     <b-list-group-item  v-for="snippet in Snippets" v-bind:key="snippet.name" v-if="checkedLangs.includes(snippet.Langname)" v-bind:class="{'snippet.Langname':true}" class="pt-0 pb-0 d-flex justify-content-between align-items-center">
-
                        <a v-bind:key="snippet.Langname" class="d-block pt-0 pb-0 text-left" href="#" v-on:click="$store.dispatch('set_snippet_action',snippet.ID)" :title="snippet.Desc"> {{snippet.Name}}</a>
                         <b-badge v-bind:key="'Key' + snippet.LAngnamr" variant="primary" :class="snippet.Langname">{{snippet.Langname}}</b-badge>
 
                     </b-list-group-item>
-
                 </b-list-group>
+
             </transition>
+
         </div>
 
     </div>
@@ -36,15 +36,9 @@
     export default {
         name:'snippet_list_smart',
         mounted: function() {
-            fetch('/getAllSnippetsClean', {method:'get' })
-                .then((response) => {
-                    return response.json()
-                })
-                .then ((jsonData) => {
-                    this.Snippets = jsonData
-                    this.Snippets.sort((a, b) => (a.Langname > b.Langname) ? 1 : -1)
+            // Snippets in Store laden
+            this.$store.dispatch('reload_snippets');
 
-                }),
                 fetch('/getLanguages', {method:'get'
                 })
                     .then((response) => {
@@ -60,7 +54,6 @@
         data: function () {
             return {
                 langListHidden: true,
-                Snippets: [],
                 Languages: [],
                 checkedLangs: []
             }
@@ -68,7 +61,10 @@
         computed: {
             isHidden() {
                 return this.$store.getters.getIsHidden;
-            }
+            },
+            Snippets() {
+                return this.$store.getters.snippets;
+            },
         },
         methods: {
             checkAllBoxes: function() {
@@ -80,6 +76,26 @@
             },
             uncheckAllBoxes: function() {
                this.checkedLangs = [];
+            },
+            reloadSnippets: function () {
+                fetch('/getAllSnippetsClean', {method:'get' })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then ((jsonData) => {
+                        this.Snippets = jsonData
+                        this.Snippets.sort((a, b) => (a.Langname > b.Langname) ? 1 : -1)
+
+                    }),
+                    fetch('/getLanguages', {method:'get'
+                    })
+                        .then((response) => {
+                            return response.json()
+                        })
+                        .then ((jsonData) => {
+                            this.Languages = jsonData
+                            this.Languages.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                        })
             }
         }
     }

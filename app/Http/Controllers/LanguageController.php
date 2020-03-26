@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CodingLanguage;
+use Carbon\Language;
 use Illuminate\Http\Request;
 
 class LanguageController extends Controller
@@ -24,6 +25,11 @@ public function createSingle(Request $request){
     }
     // API
     public function getAllLanguages(){
+        $language = CodingLanguage::all();
+        return $language->jsonSerialize();
+    }
+    // API
+    public function getAllLanguagessJson(){
         $language = CodingLanguage::all();
         return $language->jsonSerialize();
     }

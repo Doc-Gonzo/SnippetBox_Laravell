@@ -24,4 +24,9 @@ class SammlungController extends Controller
 
         $sammlung->save();
     }
+    // API
+    public function getAllSammlungenJson(){
+        $sammlung = Sammlung::all();
+        return $sammlung->jsonSerialize();
+    }
 }

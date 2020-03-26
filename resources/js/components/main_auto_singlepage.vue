@@ -4,8 +4,8 @@
             <li v-bind:key="'Sprache anlegen'"><a  v-bind:key="'Sprache anlegen'" v-on:click="$store.dispatch('change_LanguageIsHidden')" :title="'Sprache anlegen'">Sprache anlegen</a> </li>
             <li  v-bind:key="'Sammlung anlegen'"><a  v-bind:key="'Sammlung anlegen'" v-on:click="$store.dispatch('change_SammlungIsHidden')" :title="'Sammlung anlegen'">Sammlung anlegen</a> </li>
             <li  v-bind:key="'Context anlegen'"><a  v-bind:key="'Context anlegen'" v-on:click="$store.dispatch('change_ContextIsHidden')" :title="'Context anlegen'">Context anlegen</a> </li>
+            <li  v-bind:key="'addDSnippet'"><a  v-bind:key="'addSnippet'"  v-on:click="$store.dispatch('change_addSnippetIsHidden')" :title="'Add Snippet'">Snippet anlegen</a> </li>
             <li  v-bind:key="'Testvue'"><a  v-bind:key="'test'" href="/testvue" :title="'Test'">VUE Test</a> </li>
-            <li  v-bind:key="'addDSnippet'"><a  v-bind:key="'addSnippet'" href="/addSnippet" :title="'Add Snippet'">Snippet anlegen</a> </li>
         </ul>
     </div>
 </template>

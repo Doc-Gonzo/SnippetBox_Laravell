@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CodingLanguage;
 use App\Snippet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\Types\Integer;
 
@@ -24,6 +25,20 @@ class SnippetController extends Controller
         $snippet->save();
 
         return redirect('/addSnippet');
+    }
+
+    public function createSingle(Request $request){
+        $snippet = new Snippet();
+        $snippet->name = $request->name;
+        $snippet->snippet_slug = $this->slugTitle($request->name);
+        $snippet->user_id = Auth::id();
+        $snippet->desc = $request->desc;
+        $snippet->snippet_content = $request->snippet_content;
+        $snippet->sammlung_id = $request->sammlung_id;
+        $snippet->coding_language_id = $request->language_id;
+        $snippet->public = $request->public;
+
+        $snippet->save();
     }
     public function update(Request $request){
         $snippet = new Snippet();
@@ -73,8 +88,5 @@ class SnippetController extends Controller
         $snippet = Snippet::findOrFail($snippet_id);
         return $snippet->toJson();
     }
-    public function showSlug($snippet){
-        $snippet = Snippet::findOrFail($slug);
-        return $snippet->toJson();
-    }
+
 }

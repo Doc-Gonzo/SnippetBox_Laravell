@@ -31,6 +31,7 @@ Vue.component('snippet_detail', require('./components/snippet_detail').default);
 Vue.component('snippet_detail_smart', require('./components/snippet_detail_smart').default);
 Vue.component('addLanguage', require('./components/addLanguage').default);
 Vue.component('addSammlung', require('./components/addSammlung').default);
+Vue.component('addSnippet', require('./components/addSnippet').default);
 Vue.component('addContext', require('./components/addContext').default);
 
 
@@ -49,6 +50,7 @@ const store = new Vuex.Store({
         LanguageIsHidden:true,
         SammlungIsHidden:true,
         ContextIsHidden:true,
+        addSnippetIsHidden:false,
         snippet_detail_id:12,
         snippet_detail:
             {
@@ -59,6 +61,7 @@ const store = new Vuex.Store({
             }
         ,
         languages: [],
+        snippets: [],
     },
     mutations:{
         toggle_isHidden(state){
@@ -75,6 +78,9 @@ const store = new Vuex.Store({
         },
         toggle_detailIsHidden(state){
             state.detailIsHidden = !state.detailIsHidden;
+        },
+        toggle_addSnippetIsHidden(state){
+            state.addSnippetIsHidden = !state.addSnippetIsHidden;
         },
         set_snippet_detail_id(state,id){
             state.snippet_detail_id = id;
@@ -102,6 +108,17 @@ const store = new Vuex.Store({
                     state.snippet_detail.content = this.snippet.snippet_content;
                     state.snippet_detail_id = this.snippet.id;
                 })
+        },
+        reloadSnippetsMutation(state){
+            fetch('/getAllSnippetsClean', {method:'get' })
+                .then((response) => {
+                    return response.json()
+                })
+                .then ((jsonData) => {
+                    state.snippets = jsonData;
+                    state.snippets.sort((a, b) => (a.Langname > b.Langname) ? 1 : -1);
+
+                })
         }
     },
     actions: {
@@ -109,7 +126,10 @@ const store = new Vuex.Store({
             store.commit('toggle_isHidden')
         },
         change_detailIsHidden(){
-            store.commit('toggle_isHidden')
+            store.commit('toggle_detailIsHidden')
+        },
+        change_addSnippetIsHidden(){
+            store.commit('toggle_addSnippetIsHidden')
         },
         change_LanguageIsHidden(){
             store.commit('toggle_LanguageIsHidden')
@@ -119,6 +139,9 @@ const store = new Vuex.Store({
         },
         change_ContextIsHidden(){
             store.commit('toggle_ContextIsHidden')
+        },
+        reload_snippets(){
+            store.commit('reloadSnippetsMutation')
         },
         set_snippet_detail_action(state,id) {
             store.commit('set_snippet_detail_id', id)
@@ -165,6 +188,17 @@ const store = new Vuex.Store({
                     currentObj.output = error;
                 });
         },
+        createSnippet({commit}, snippet_object) {
+            axios.post('/addSnippetSingle',{
+                name: snippet_object.name,
+                desc: snippet_object.desc,
+                snippet_content: snippet_object.content,
+                language_id: snippet_object.language_id,
+                sammlung_id: snippet_object.sammlung_id,
+                public: snippet_object.public,
+            })
+
+        },
     },
     getters: {
         getIsHidden: state => {
@@ -179,6 +213,9 @@ const store = new Vuex.Store({
         getLanguageIsHidden: state => {
             return state.LanguageIsHidden;
         },
+        getAddSnippetIsHidden: state => {
+            return state.addSnippetIsHidden;
+        },
         getSammlungIsHidden: state => {
             return state.SammlungIsHidden;
         },
@@ -190,7 +227,10 @@ const store = new Vuex.Store({
         },
         snippet_detail: state => {
             return state.snippet_detail;
-        }
+        },
+        snippets: state => {
+            return state.snippets;
+        },
     }
 })
 const app = new Vue({

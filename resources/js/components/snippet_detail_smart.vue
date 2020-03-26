@@ -1,15 +1,15 @@
 <template>
     <div class="snippet_detail_wrapper">
         <div :class="snippet_detail_id">
-
+            <div class="write_toggle"  v-on:click="$store.dispatch('change_addSnippetIsHidden')"></div>
             <h4 v-on:click="$store.commit('toggle_detailIsHidden')">{{snippet_detail_object.titel}}</h4>
 
-            <form action="/updateSnippet" method="post"  v-if="!detailIsHidden" >
+            <b-form-group action="/updateSnippet" method="post"  v-if="!detailIsHidden" >
                 <input type="hidden" name="snippet_id" :value="snippet_detail_object.id">
                <textarea class="form-control snippet_desc" name="snippet_desc">{{snippet_detail_object.desc}}</textarea><br><br>
                <textarea class="form-control detail_content" name="snippet_content">{{snippet_detail_object.content}}</textarea><br><br>
-                <button type="submit" class="btn-dark">Update Snippet</button>
-            </form>
+                <button type="submit" class="btn-dark update_button">Update Snippet</button>
+            </b-form-group>
 
         </div>
     </div>
@@ -67,6 +67,23 @@
         color: yellow;
         letter-spacing: 1.4px;
         font-size: smaller;
+    }
+    .write_toggle {
+        width: 40px;
+        height: 40px;
+        background-image: url("/img/write.png");
+        background-size:100%;
+        cursor:pointer;
+        position:absolute;
+        right:0;
+        bottom:100px;
+    }
+    .snippet_detail_wrapper {
+        position: relative;
+        height: 100%;
+    }
+    .update_button {
+        margin-bottom:93px !important;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity 1s, height .5s;

@@ -25,6 +25,8 @@ Route::get('/addContext/',  function () {
 Route::get('/getAllContextsJson/', 'ContextController@getAllContextsJson')->middleware('auth');
 
 
+
+
 Route::post('/addLanguage/', 'LanguageController@create')->middleware('auth');
 Route::post('/addLanguageSingle/', 'LanguageController@createSingle')->middleware('auth');
 Route::get('/addLanguage/',  function () {
@@ -32,7 +34,7 @@ Route::get('/addLanguage/',  function () {
 })->middleware('auth');
 
 Route::get('/getLanguages/', 'LanguageController@getAllLanguages')->middleware('auth');
-
+Route::get('/getAllLanguagesJson/', 'LanguageController@getAllLanguagessJson')->middleware('auth');
 
 Route::post('/addSammlung/', 'SammlungController@create')->middleware('auth');
 Route::post('/addSammlungSingle/', 'SammlungController@createSingle')->middleware('auth');
@@ -40,14 +42,21 @@ Route::post('/addSammlungSingle/', 'SammlungController@createSingle')->middlewar
 Route::get('/addSammlung/',  function () {
     return view('addSammlung');
 })->middleware('auth');
+Route::get('/getAllSammlungenJson/', 'SammlungController@getAllSammlungenJson')->middleware('auth');
 
 Route::post('/addSnippet/', 'SnippetController@create')->middleware('auth');
+Route::post('/addSnippetSingle/', 'SnippetController@createSingle')->middleware('auth');
+
+
+
 
 Route::post('/updateSnippet/', 'SnippetController@update')->middleware('auth');
 
 Route::get('/addSnippet/',  function () {
     return view('addSnippet');
 })->middleware('auth');
+
+
 Route::get('/testvue/',  function () {
     return view('vuetest');
 })->middleware('auth');
