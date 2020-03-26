@@ -4,10 +4,10 @@
             <b-form v-if="!SammlungIsHidden">
                 <h4>add collection</h4>
                 <label></label>
-                <b-input type="text"  v-model="sammlung.name"  name="name" placeholder="Name"></b-input>
+                <b-input type="text"  v-model="sammlungName"  name="name" placeholder="Name"></b-input>
                 <label></label>
                 <div class="text-center">
-                    <b-button class="" v-on:click="createSammlung, sammlung">Abschicken</b-button>
+                    <b-button class="" v-on:click="createSammlung">Abschicken</b-button>
                 </div>
             </b-form>
         </div>
@@ -19,18 +19,18 @@
         name: "addSammlung",
         data: function () {
             return {
-                Contextsss: [],
-                contextID: 1,
-                langName: '',
-                sammlung: {
-                    name: '',
-                    user_id:'1'
-                }
+                sammlungName: '',
+
             }
         },
         methods: {
-            createSammlung(sammlung) {
-                this.$store.dispatch('createSammlung', sammlung)
+            createSammlung() {
+                if(this.sammlungName !== '') {
+                    this.$store.dispatch('createSammlung', this.sammlungName);
+                }
+                else {
+                    alert('Name darf nicht leer sein!');
+                }
             }
         },
         computed: {

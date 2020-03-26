@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sammlung;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SammlungController extends Controller
 {
@@ -19,7 +20,7 @@ class SammlungController extends Controller
     public function createSingle(Request $request){
         $sammlung = new Sammlung();
         $sammlung->name = $request->name;
-        $sammlung->user_id = $request->user_id;
+        $sammlung->user_id = Auth::id();
 
         $sammlung->save();
     }

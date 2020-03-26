@@ -2076,18 +2076,16 @@ __webpack_require__.r(__webpack_exports__);
   name: "addSammlung",
   data: function data() {
     return {
-      Contextsss: [],
-      contextID: 1,
-      langName: '',
-      sammlung: {
-        name: '',
-        user_id: '1'
-      }
+      sammlungName: ''
     };
   },
   methods: {
-    createSammlung: function createSammlung(sammlung) {
-      this.$store.dispatch('createSammlung', sammlung);
+    createSammlung: function createSammlung() {
+      if (this.sammlungName !== '') {
+        this.$store.dispatch('createSammlung', this.sammlungName);
+      } else {
+        alert('Name darf nicht leer sein!');
+      }
     }
   },
   computed: {
@@ -75698,11 +75696,11 @@ var render = function() {
                 _c("b-input", {
                   attrs: { type: "text", name: "name", placeholder: "Name" },
                   model: {
-                    value: _vm.sammlung.name,
+                    value: _vm.sammlungName,
                     callback: function($$v) {
-                      _vm.$set(_vm.sammlung, "name", $$v)
+                      _vm.sammlungName = $$v
                     },
-                    expression: "sammlung.name"
+                    expression: "sammlungName"
                   }
                 }),
                 _vm._v(" "),
@@ -75712,17 +75710,9 @@ var render = function() {
                   "div",
                   { staticClass: "text-center" },
                   [
-                    _c(
-                      "b-button",
-                      {
-                        on: {
-                          click: function($event) {
-                            _vm.createSammlung, _vm.sammlung
-                          }
-                        }
-                      },
-                      [_vm._v("Abschicken")]
-                    )
+                    _c("b-button", { on: { click: _vm.createSammlung } }, [
+                      _vm._v("Abschicken")
+                    ])
                   ],
                   1
                 )
@@ -89588,12 +89578,14 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     set_snippet_action: function set_snippet_action(state, id) {
       store.commit('setSnippetMutation', id);
     },
-    createSammlung: function createSammlung(_ref, sammlung) {
+    createSammlung: function createSammlung(_ref, sammlung_name) {
       var commit = _ref.commit;
-      axios.post('/addSammlungSingle', sammlung).then(function (res) {
-        commit('CREATE_POST', res.data);
-      })["catch"](function (err) {
-        console.log(err);
+      axios.post('/addSammlungSingle', {
+        name: sammlung_name
+      }).then(function (response) {
+        currentObj.output = response.data;
+      })["catch"](function (error) {
+        currentObj.output = error;
       });
     },
     createContext: function createContext(_ref2, context_name) {

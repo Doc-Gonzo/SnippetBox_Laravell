@@ -129,13 +129,17 @@ const store = new Vuex.Store({
         set_snippet_action(state, id){
             store.commit('setSnippetMutation', id)
         },
-        createSammlung({commit}, sammlung) {
-                axios.post('/addSammlungSingle', sammlung)
-                    .then(res => {
-                        commit('CREATE_POST', res.data)
-                    }).catch(err => {
-                    console.log(err)
+        createSammlung({commit}, sammlung_name) {
+            axios.post('/addSammlungSingle', {
+                name: sammlung_name,
+
+            })
+                .then(function (response) {
+                    currentObj.output = response.data;
                 })
+                .catch(function (error) {
+                    currentObj.output = error;
+                });
             },
         createContext({commit}, context_name) {
             axios.post('/addContextSingle', {
