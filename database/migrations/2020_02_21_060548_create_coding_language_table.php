@@ -13,7 +13,7 @@ class CreateCodingLanguageTable extends Migration
      */
     public function up()
     {
-        Schema::create('coding_language', function (Blueprint $table) {
+        Schema::create('coding_languages', function (Blueprint $table) {
         $table->bigIncrements('id');
 
         $table->string('name');
@@ -34,6 +34,6 @@ class CreateCodingLanguageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coding_language');
+        Schema::dropIfExists('coding_languages');
     }
 }

@@ -13,7 +13,7 @@ class CreateSnippetTable extends Migration
      */
     public function up()
     {
-        Schema::create('snippet', function (Blueprint $table) {
+        Schema::create('snippets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('snippet_slug')->nullable(true)->unique(true);
@@ -47,6 +47,6 @@ class CreateSnippetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('snippet');
+        Schema::dropIfExists('snippets');
     }
 }

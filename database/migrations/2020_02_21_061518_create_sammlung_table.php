@@ -13,7 +13,7 @@ class CreateSammlungTable extends Migration
      */
     public function up()
     {
-        Schema::create('sammlung', function (Blueprint $table) {
+        Schema::create('sammlungs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->unsignedBigInteger('user_id');
@@ -32,6 +32,6 @@ class CreateSammlungTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sammlung');
+        Schema::dropIfExists('sammlungs');
     }
 }

@@ -13,7 +13,7 @@ class CreateContextTable extends Migration
      */
     public function up()
     {
-        Schema::create('context', function (Blueprint $table) {
+        Schema::create('contexts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateContextTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('context');
+        Schema::dropIfExists('contexts');
     }
 }
