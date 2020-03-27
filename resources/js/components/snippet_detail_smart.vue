@@ -2,7 +2,7 @@
     <div class="snippet_detail_wrapper">
         <div :class="snippet_detail_id">
             <div class="write_toggle"  v-on:click="$store.dispatch('change_addSnippetIsHidden')"></div>
-            <h4 v-on:click="$store.commit('toggle_detailIsHidden')">{{snippet_detail_object.titel}}</h4>
+            <h4>{{snippet_detail_object.titel}}</h4>
 
             <b-form-group action="/updateSnippet" method="post"  v-if="!detailIsHidden" >
                 <input type="hidden" name="snippet_id" :value="snippet_detail_object.id">
