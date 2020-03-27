@@ -28,12 +28,12 @@ class CreateSnippetTable extends Migration
 
             $table->unsignedBigInteger('coding_language_id');
             $table->foreign('coding_language_id')
-                ->references('id')->on('coding_language')
+                ->references('id')->on('coding_languages')
                 ->onDelete('cascade');
 
             $table->unsignedBigInteger('sammlung_id');
             $table->foreign('sammlung_id')
-                ->references('id')->on('sammlung')
+                ->references('id')->on('sammlungs')
                 ->onDelete('cascade');
 
             $table->timestamps();

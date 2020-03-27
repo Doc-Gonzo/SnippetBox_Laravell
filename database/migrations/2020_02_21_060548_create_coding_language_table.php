@@ -20,7 +20,7 @@ class CreateCodingLanguageTable extends Migration
         $table->unsignedBigInteger('context_id');
 
         $table->foreign('context_id')
-            ->references('id')->on('context')
+            ->references('id')->on('contexts')
             ->onDelete('cascade');
 
         $table->timestamps();
