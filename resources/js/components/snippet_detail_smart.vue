@@ -9,7 +9,7 @@
                 <input type="hidden" name="snippet_id" :value="snippet_detail_object.id">
                <textarea class="form-control snippet_desc" name="snippet_desc">{{snippet_detail_object.desc}}</textarea><br><br>
                <textarea class="form-control detail_content" name="snippet_content">{{snippet_detail_object.content}}</textarea><br><br>
-                <button type="submit" class="btn-dark update_button">Update Snippet</button>
+                <b-button class="" v-on:click="">Update Snippet</b-button>
             </b-form-group>
 
         </div>
@@ -62,7 +62,7 @@
         cursor:pointer;
     }
     .detail_content {
-        width: 800px;
+        width: 100%;
         height: 400px !important;
         background-color: #1b1e21;
         color: yellow;
@@ -76,13 +76,10 @@
         background-size:100%;
         cursor:pointer;
         position:absolute;
-        right:0;
-        bottom:100px;
+        right: 30px;
+        bottom: 40px;
     }
-    .snippet_detail_wrapper {
-        position: relative;
-        height: 100%;
-    }
+
     .update_button {
         margin-bottom:93px !important;
     }

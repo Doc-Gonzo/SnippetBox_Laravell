@@ -30,7 +30,7 @@ body {
 .snippet_content {
     min-height: 250px;
     overflow-y: scroll;
-    width: 800px;
+    width: 100%;
     height: 400px !important;
     background-color: #1b1e21;
     color: yellow;
@@ -57,4 +57,24 @@ body {
 .widgets {
 
 }
-
+.snippet_detail_wrapper,#addSnippet_bg{
+    position: absolute;
+    width: 50% !important;
+    left: 25%;
+    top: 10%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid aliceblue;
+    z-index: 999;
+    background-color: #fefefe;
+    height: 80%;
+}
+@media only screen and (max-width: 1500px) {
+    .snippet_detail_wrapper, #addSnippet_bg {
+        left: 2% !important;
+    }
+    .snippet_content,.detail_content {
+        height: 260px !important;
+        max-height:260px !important;
+    }
+}

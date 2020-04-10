@@ -43270,7 +43270,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbutton[data-v-3e41a872]{\n    margin-top: 20px;\n}\nh4[data-v-3e41a872] {\n    text-align: center;\n}\n#addSnippet_bg[data-v-3e41a872] {\n    position: fixed;\n    top: 68px;\n    background-color: #FFf;\n    height:100%;\n}\n.write_toggle[data-v-3e41a872] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right:0;\n    bottom:246px;\n    opacity: .6;\n}\n.addSnippetinput_name[data-v-3e41a872] {\n    margin-bottom: 40px;\n}\n", ""]);
+exports.push([module.i, "\nbutton[data-v-3e41a872]{\n    margin-top: 20px;\n}\nh4[data-v-3e41a872] {\n    text-align: center;\n    margin-bottom:0px;\n}\n.write_toggle[data-v-3e41a872] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right: 30px;\n    bottom: 40px;\n    opacity: .6;\n}\n.addSnippetinput_name[data-v-3e41a872] {\n    margin-bottom: 40px;\n    margig-top:-12px !important;\n}\n\n\n", ""]);
 
 // exports
 
@@ -43346,7 +43346,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 800px;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n.write_toggle[data-v-65f4b2f0] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right:0;\n    bottom:100px;\n}\n.snippet_detail_wrapper[data-v-65f4b2f0] {\n    position: relative;\n    height: 100%;\n}\n.update_button[data-v-65f4b2f0] {\n    margin-bottom:93px !important;\n}\n.fade-enter-active[data-v-65f4b2f0], .fade-leave-active[data-v-65f4b2f0] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-65f4b2f0], .fade-leave-to[data-v-65f4b2f0] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n", ""]);
+exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 100%;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n.write_toggle[data-v-65f4b2f0] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right: 30px;\n    bottom: 40px;\n}\n.update_button[data-v-65f4b2f0] {\n    margin-bottom:93px !important;\n}\n.fade-enter-active[data-v-65f4b2f0], .fade-leave-active[data-v-65f4b2f0] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-65f4b2f0], .fade-leave-to[data-v-65f4b2f0] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n", ""]);
 
 // exports
 
@@ -75957,7 +75957,7 @@ var render = function() {
         _c(
           "div",
           [
-            _c("h5", [_vm._v("Add snippet")]),
+            _c("h4", [_vm._v("Add snippet")]),
             _vm._v(" "),
             _c("div", {
               staticClass: "write_toggle",
@@ -76455,15 +76455,11 @@ var render = function() {
                 _c("br"),
                 _c("br"),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn-dark update_button",
-                    attrs: { type: "submit" }
-                  },
-                  [_vm._v("Update Snippet")]
-                )
-              ]
+                _c("b-button", { on: { click: function($event) {} } }, [
+                  _vm._v("Update Snippet")
+                ])
+              ],
+              1
             )
           : _vm._e()
       ],

@@ -1,7 +1,7 @@
 <template >
     <div id="addSnippet_bg" v-if="!addSnippetIsHidden">
         <div>
-            <h5>Add snippet</h5>
+            <h4>Add snippet</h4>
             <div class="write_toggle"  v-on:click="$store.dispatch('change_addSnippetIsHidden')"></div>
             <b-form-group>
                 <label></label>
@@ -130,12 +130,7 @@
     }
     h4 {
         text-align: center;
-    }
-    #addSnippet_bg {
-        position: fixed;
-        top: 68px;
-        background-color: #FFf;
-        height:100%;
+        margin-bottom:0px;
     }
     .write_toggle {
         width: 40px;
@@ -144,11 +139,14 @@
         background-size:100%;
         cursor:pointer;
         position:absolute;
-        right:0;
-        bottom:246px;
+        right: 30px;
+        bottom: 40px;
         opacity: .6;
     }
     .addSnippetinput_name {
         margin-bottom: 40px;
+        margig-top:-12px !important;
     }
+
+
 </style>
