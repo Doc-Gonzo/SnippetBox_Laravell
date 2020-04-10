@@ -2150,6 +2150,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "addSnippet",
   mounted: function mounted() {
@@ -2398,6 +2399,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -75955,6 +75957,8 @@ var render = function() {
         _c(
           "div",
           [
+            _c("h5", [_vm._v("Add snippet")]),
+            _vm._v(" "),
             _c("div", {
               staticClass: "write_toggle",
               on: {
@@ -76417,17 +76421,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c(
-          "h4",
-          {
-            on: {
-              click: function($event) {
-                return _vm.$store.commit("toggle_detailIsHidden")
-              }
-            }
-          },
-          [_vm._v(_vm._s(_vm.snippet_detail_object.titel))]
-        ),
+        _c("h4", [_vm._v(_vm._s(_vm.snippet_detail_object.titel))]),
         _vm._v(" "),
         !_vm.detailIsHidden
           ? _c(

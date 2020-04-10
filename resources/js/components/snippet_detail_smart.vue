@@ -1,6 +1,7 @@
 <template>
     <div class="snippet_detail_wrapper">
         <div :class="snippet_detail_id">
+
             <div class="write_toggle"  v-on:click="$store.dispatch('change_addSnippetIsHidden')"></div>
             <h4>{{snippet_detail_object.titel}}</h4>
 
