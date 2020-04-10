@@ -34,7 +34,7 @@
                         </select>
                         </div>
                         <div class="text-center col-md-2">
-                            <b-button class="" v-on:click="createSnippet">Abschicken</b-button>
+                            <b-button class="okbutton" v-on:click="createSnippet">Abschicken</b-button>
                         </div>
                     </div>
                 </div>
@@ -131,6 +131,18 @@
     h4 {
         text-align: center;
         margin-bottom:0px;
+    }
+    label {
+        color:darkmagenta;
+    }
+   .okbutton {
+       background-color: darkmagenta;
+   }
+    #addSnippet_bg h4 {
+        color: darkmagenta;
+    }
+    .addSnippet_public_wrapper {
+        padding-top:40px;
     }
     .write_toggle {
         width: 40px;

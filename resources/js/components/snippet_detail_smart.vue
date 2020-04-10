@@ -9,7 +9,7 @@
                 <input type="hidden" name="snippet_id" :value="snippet_detail_object.id">
                <textarea class="form-control snippet_desc" name="snippet_desc">{{snippet_detail_object.desc}}</textarea><br><br>
                <textarea class="form-control detail_content" name="snippet_content">{{snippet_detail_object.content}}</textarea><br><br>
-                <b-button class="" v-on:click="">Update Snippet</b-button>
+                <b-button class="okbutton" v-on:click="">Update Snippet</b-button>
             </b-form-group>
 
         </div>
@@ -60,6 +60,10 @@
     h4 {
         margin-bottom:25px;
         cursor:pointer;
+        color:cornflowerblue;
+    }
+    .okbutton {
+        background-color: cornflowerblue;
     }
     .detail_content {
         width: 100%;

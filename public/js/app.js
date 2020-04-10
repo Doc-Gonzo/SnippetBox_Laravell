@@ -43270,7 +43270,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbutton[data-v-3e41a872]{\n    margin-top: 20px;\n}\nh4[data-v-3e41a872] {\n    text-align: center;\n    margin-bottom:0px;\n}\n.write_toggle[data-v-3e41a872] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right: 30px;\n    bottom: 40px;\n    opacity: .6;\n}\n.addSnippetinput_name[data-v-3e41a872] {\n    margin-bottom: 40px;\n    margig-top:-12px !important;\n}\n\n\n", ""]);
+exports.push([module.i, "\nbutton[data-v-3e41a872]{\n     margin-top: 20px;\n}\nh4[data-v-3e41a872] {\n     text-align: center;\n     margin-bottom:0px;\n}\nlabel[data-v-3e41a872] {\n     color:darkmagenta;\n}\n.okbutton[data-v-3e41a872] {\n    background-color: darkmagenta;\n}\n#addSnippet_bg h4[data-v-3e41a872] {\n     color: darkmagenta;\n}\n.addSnippet_public_wrapper[data-v-3e41a872] {\n     padding-top:40px;\n}\n.write_toggle[data-v-3e41a872] {\n     width: 40px;\n     height: 40px;\n     background-image: url(\"/img/write.png\");\n     background-size:100%;\n     cursor:pointer;\n     position:absolute;\n     right: 30px;\n     bottom: 40px;\n     opacity: .6;\n}\n.addSnippetinput_name[data-v-3e41a872] {\n     margin-bottom: 40px;\n     margig-top:-12px !important;\n}\n\n\n", ""]);
 
 // exports
 
@@ -43346,7 +43346,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 100%;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n.write_toggle[data-v-65f4b2f0] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right: 30px;\n    bottom: 40px;\n}\n.update_button[data-v-65f4b2f0] {\n    margin-bottom:93px !important;\n}\n.fade-enter-active[data-v-65f4b2f0], .fade-leave-active[data-v-65f4b2f0] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-65f4b2f0], .fade-leave-to[data-v-65f4b2f0] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n", ""]);
+exports.push([module.i, "\nh4[data-v-65f4b2f0] {\n    margin-bottom:25px;\n    cursor:pointer;\n    color:cornflowerblue;\n}\n.okbutton[data-v-65f4b2f0] {\n    background-color: cornflowerblue;\n}\n.detail_content[data-v-65f4b2f0] {\n    width: 100%;\n    height: 400px !important;\n    background-color: #1b1e21;\n    color: yellow;\n    letter-spacing: 1.4px;\n    font-size: smaller;\n}\n.write_toggle[data-v-65f4b2f0] {\n    width: 40px;\n    height: 40px;\n    background-image: url(\"/img/write.png\");\n    background-size:100%;\n    cursor:pointer;\n    position:absolute;\n    right: 30px;\n    bottom: 40px;\n}\n.update_button[data-v-65f4b2f0] {\n    margin-bottom:93px !important;\n}\n.fade-enter-active[data-v-65f4b2f0], .fade-leave-active[data-v-65f4b2f0] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-65f4b2f0], .fade-leave-to[data-v-65f4b2f0] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n", ""]);
 
 // exports
 
@@ -76161,9 +76161,14 @@ var render = function() {
                       "div",
                       { staticClass: "text-center col-md-2" },
                       [
-                        _c("b-button", { on: { click: _vm.createSnippet } }, [
-                          _vm._v("Abschicken")
-                        ])
+                        _c(
+                          "b-button",
+                          {
+                            staticClass: "okbutton",
+                            on: { click: _vm.createSnippet }
+                          },
+                          [_vm._v("Abschicken")]
+                        )
                       ],
                       1
                     )
@@ -76455,9 +76460,14 @@ var render = function() {
                 _c("br"),
                 _c("br"),
                 _vm._v(" "),
-                _c("b-button", { on: { click: function($event) {} } }, [
-                  _vm._v("Update Snippet")
-                ])
+                _c(
+                  "b-button",
+                  {
+                    staticClass: "okbutton",
+                    on: { click: function($event) {} }
+                  },
+                  [_vm._v("Update Snippet")]
+                )
               ],
               1
             )
