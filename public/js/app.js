@@ -2151,6 +2151,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "addSnippet",
   mounted: function mounted() {
@@ -43270,7 +43272,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbutton[data-v-3e41a872]{\n     margin-top: 20px;\n}\nh4[data-v-3e41a872] {\n     text-align: center;\n     margin-bottom:0px;\n}\nlabel[data-v-3e41a872] {\n     color:darkmagenta;\n}\n.okbutton[data-v-3e41a872] {\n    background-color: darkmagenta;\n}\n#addSnippet_bg h4[data-v-3e41a872] {\n     color: darkmagenta;\n}\n.addSnippet_public_wrapper[data-v-3e41a872] {\n     padding-top:40px;\n}\n.write_toggle[data-v-3e41a872] {\n     width: 40px;\n     height: 40px;\n     background-image: url(\"/img/write.png\");\n     background-size:100%;\n     cursor:pointer;\n     position:absolute;\n     right: 30px;\n     bottom: 40px;\n     opacity: .6;\n}\n.addSnippetinput_name[data-v-3e41a872] {\n     margin-bottom: 40px;\n     margig-top:-12px !important;\n}\n\n\n", ""]);
+exports.push([module.i, "\nbutton[data-v-3e41a872]{\n     margin-top: 20px;\n}\nh4[data-v-3e41a872] {\n     text-align: center;\n     margin-bottom:0px;\n}\nlabel[data-v-3e41a872] {\n     color:darkmagenta;\n}\n.okbutton[data-v-3e41a872] {\n    background-color: darkmagenta;\n}\n#addSnippet_bg h4[data-v-3e41a872] {\n     color: darkmagenta;\n}\n.addSnippet_public_wrapper[data-v-3e41a872] {\n     padding-top:40px;\n}\n.write_toggle[data-v-3e41a872] {\n     width: 40px;\n     height: 40px;\n     background-image: url(\"/img/write.png\");\n     background-size:100%;\n     cursor:pointer;\n     position:absolute;\n     right: 30px;\n     bottom: 40px;\n     opacity: .6;\n}\n.addSnippetinput_name[data-v-3e41a872] {\n     margin-bottom: 40px;\n     margig-top:-12px !important;\n}\n\n /* Transitions */\n.addSnippetTransition-enter-active[data-v-3e41a872] {\n     -webkit-animation: addSnippetTransition-data-v-3e41a872 .5s;\n             animation: addSnippetTransition-data-v-3e41a872 .5s;\n}\n.addSnippetTransition-leave-active[data-v-3e41a872] {\n     animation: addSnippetTransition-data-v-3e41a872 .5s reverse;\n}\n@-webkit-keyframes addSnippetTransition-data-v-3e41a872 {\n0% {\n         transform: scale(0);\n}\n50% {\n         transform: scale(1.5);\n}\n100% {\n         transform: scale(1);\n}\n}\n@keyframes addSnippetTransition-data-v-3e41a872 {\n0% {\n         transform: scale(0);\n}\n50% {\n         transform: scale(1.5);\n}\n100% {\n         transform: scale(1);\n}\n}\n", ""]);
 
 // exports
 
@@ -43365,7 +43367,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    /* background-color:whitesmoke;*/\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    /* border-radius: 8px 8px 0 0; */\n}\nh5[data-v-20597856] {\n    cursor:pointer;\n}\n.lang_list_wrapper[data-v-20597856] {\n    width: 300px;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.fadeSlow-enter-active[data-v-20597856], .fadeSlow-leave-active[data-v-20597856] {\n    transition: opacity .8s;\n    transition: height 0.3s;\n}\n.fadeSlow-enter[data-v-20597856], .fadeSlow-leave-to[data-v-20597856] /* .fadeSlow-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    /* border-radius:0 0 8px 8px; */\n}\n.b-list-group-item a[data-v-20597856] {\n    cursor: pointer;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 14px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    padding: 5px 0;\n    line-height:1.1;\n}\n.filterButton[data-v-20597856] {\n    padding-bottom: 0;\n    padding-top: 0;\n    text-align:right;\n    display:inline;\n    font-size:12px;\n}\n.filterButton label[data-v-20597856] {\n    margin-bottom:0px;\n}\n.smallButton[data-v-20597856] {\n    padding: 0;\n}\n.snippet_list_wrapper[data-v-20597856] {\n       max-height: 311px;\n       overflow-y: scroll;\n       margin-bottom:20px;\n       font-size:12px;\n}\n.lang_list_wrapper[data-v-20597856] {\n    max-height: 175px;\n    overflow-y: scroll;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n.slide-enter-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: ease-in;\n}\n.slide-leave-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n}\n.slide-enter-to[data-v-20597856], .slide-leave[data-v-20597856] {\n    max-height: 100px;\n    overflow: hidden;\n}\n.slide-enter[data-v-20597856], .slide-leave-to[data-v-20597856] {\n    overflow: hidden;\n    max-height: 0;\n}\n.list-enter-active[data-v-20597856] {\n    -webkit-animation: add-item-data-v-20597856 1s;\n            animation: add-item-data-v-20597856 1s;\n}\n.list-leave-active[data-v-20597856] {\n    position: absolute;\n    animation: add-item-data-v-20597856 1s reverse;\n}\n.list-move[data-v-20597856] {\n    transition: transform 1s;\n}\n@-webkit-keyframes add-item-data-v-20597856 {\n0% {\n        opacity: 0;\n        transform: translateX(150px);\n}\n50% {\n        opacity: 0.5;\n        transform: translateX(-10px) skewX(20deg);\n}\n100% {\n        opacity: 1;\n        transform: translateX(0px);\n}\n}\n@keyframes add-item-data-v-20597856 {\n0% {\n        opacity: 0;\n        transform: translateX(150px);\n}\n50% {\n        opacity: 0.5;\n        transform: translateX(-10px) skewX(20deg);\n}\n100% {\n        opacity: 1;\n        transform: translateX(0px);\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.b-list-group-item[data-v-20597856] {\n    position:relative;\n}\na[data-v-20597856]:hover {\n    text-decoration: none !important;\n}\nh4[data-v-20597856] {\n    cursor: pointer;\n    /* background-color:whitesmoke;*/\n    margin-bottom:0px;\n    padding-bottom:10px;\n    padding-top:10px;\n    /* border-radius: 8px 8px 0 0; */\n}\nh5[data-v-20597856] {\n    cursor:pointer;\n}\n.lang_list_wrapper[data-v-20597856] {\n    width: 300px;\n}\n.snippetlist[data-v-20597856] {\n    position: absolute;\n    right: 25px;\n    top: 70px;\n    width: 300px;\n}\n.fade-enter-active[data-v-20597856], .fade-leave-active[data-v-20597856] {\n    transition: opacity 1s, height .5s;\n}\n.fade-enter[data-v-20597856], .fade-leave-to[data-v-20597856] /* .fade-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.fadeSlow-enter-active[data-v-20597856], .fadeSlow-leave-active[data-v-20597856] {\n    transition: opacity .8s;\n    transition: height 0.3s;\n}\n.fadeSlow-enter[data-v-20597856], .fadeSlow-leave-to[data-v-20597856] /* .fadeSlow-leave-active below version 2.1.8 */ {\n    opacity: 0;\n    height: 0;\n}\n.list-group[data-v-20597856] {\n    padding-bottom:20px !important;\n    padding-top:20px !important;\n    background-color:#1b1e21;\n    /* border-radius:0 0 8px 8px; */\n}\n.b-list-group-item a[data-v-20597856] {\n    cursor: pointer;\n}\n.list-group-item[data-v-20597856] {\n    color:yellow !important;\n    background-color:#1b1e21;\n}\n.list-group-item a[data-v-20597856] {\n    color:yellow !important;\n    border-bottom: 1px solid #fff !important;\n    display:block !important;\n    width:100%;\n    font-size: 14px;\n}\n.badge-primary[data-v-20597856] {\n    width: 60px;\n    border-radius:0;\n    padding: 5px 0;\n    line-height:1.1;\n}\n.filterButton[data-v-20597856] {\n    padding-bottom: 0;\n    padding-top: 0;\n    text-align:right;\n    display:inline;\n    font-size:12px;\n}\n.filterButton label[data-v-20597856] {\n    margin-bottom:0px;\n}\n.smallButton[data-v-20597856] {\n    padding: 0;\n}\n.snippet_list_wrapper[data-v-20597856] {\n       max-height: 311px;\n       overflow-y: scroll;\n       margin-bottom:20px;\n       font-size:12px;\n}\n.lang_list_wrapper[data-v-20597856] {\n    max-height: 175px;\n    overflow-y: scroll;\n}\nspan.Vue[data-v-20597856] {\n    background-color:#3aae7f;\n}\nspan.PHP[data-v-20597856] {\n    background-color: #4a4c7c;\n}\nspan.Laravel[data-v-20597856] {\n    background-color:#ff2d20;\n}\nspan.Ducky[data-v-20597856] {\n    background-color:orange;\n}\nspan.CSS[data-v-20597856] {\n    background-color: #4a8ddb;\n}\nspan.JS[data-v-20597856] {\n    background-color: #f0d81c;\n}\nspan.SAP[data-v-20597856] {\n    background-color: #003f86;\n}\n.slide-enter-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: ease-in;\n}\n.slide-leave-active[data-v-20597856] {\n    transition-duration: 0.5s;\n    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);\n}\n.slide-enter-to[data-v-20597856], .slide-leave[data-v-20597856] {\n    max-height: 100px;\n    overflow: hidden;\n}\n.slide-enter[data-v-20597856], .slide-leave-to[data-v-20597856] {\n    overflow: hidden;\n    max-height: 0;\n}\n.list-enter-active[data-v-20597856] {\n    -webkit-animation: add-item-data-v-20597856 1s;\n            animation: add-item-data-v-20597856 1s;\n}\n.list-leave-active[data-v-20597856] {\n    position: absolute;\n    animation: add-item-data-v-20597856 1s reverse;\n}\n.list-move[data-v-20597856] {\n    transition: transform 1s;\n}\n@-webkit-keyframes add-item-data-v-20597856 {\n0% {\n        transform: scale(0);\n}\n50% {\n        transform: scale(1.5);\n}\n100% {\n        transform: scale(1);\n}\n}\n@keyframes add-item-data-v-20597856 {\n0% {\n        transform: scale(0);\n}\n50% {\n        transform: scale(1.5);\n}\n100% {\n        transform: scale(1);\n}\n}\n\n", ""]);
 
 // exports
 
@@ -75957,7 +75959,7 @@ var render = function() {
         _c(
           "div",
           [
-            _c("h4", [_vm._v("Add snippet")]),
+            _c("h4", [_vm._v("Add snippet Tester")]),
             _vm._v(" "),
             _c("div", {
               staticClass: "write_toggle",
@@ -75969,211 +75971,255 @@ var render = function() {
             }),
             _vm._v(" "),
             _c(
-              "b-form-group",
+              "transition",
+              { attrs: { name: "addSnippetTransition" } },
               [
-                _c("label"),
-                _vm._v(" "),
-                _c("b-input", {
-                  staticClass: "addSnippetinput_name",
-                  attrs: { type: "text", name: "name", placeholder: "Name" },
-                  model: {
-                    value: _vm.snippet.name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.snippet, "name", $$v)
-                    },
-                    expression: "snippet.name"
-                  }
-                }),
-                _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.snippet.desc,
-                      expression: "snippet.desc"
-                    }
-                  ],
-                  staticClass: "snippet_desc input-group mb-3",
-                  attrs: { name: "desc", placeholder: "Beschreibung" },
-                  domProps: { value: _vm.snippet.desc },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.snippet, "desc", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.snippet.content,
-                      expression: "snippet.content"
-                    }
-                  ],
-                  staticClass: "snippet_content input-group mb-3",
-                  attrs: { name: "snippet_content", placeholder: "Content" },
-                  domProps: { value: _vm.snippet.content },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.snippet, "content", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "container" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "addSnippet_lang_wrapper col-md-3" },
+                !_vm.addSnippetIsHidden
+                  ? _c(
+                      "b-form-group",
                       [
-                        _c("label", { attrs: { for: "codingLanguage_id" } }, [
-                          _vm._v("Sprache:")
-                        ]),
+                        _c("label"),
                         _vm._v(" "),
-                        _c(
-                          "b-select",
-                          {
-                            model: {
-                              value: _vm.snippet.language_id,
-                              callback: function($$v) {
-                                _vm.$set(_vm.snippet, "language_id", $$v)
-                              },
-                              expression: "snippet.language_id"
-                            }
+                        _c("b-input", {
+                          staticClass: "addSnippetinput_name",
+                          attrs: {
+                            type: "text",
+                            name: "name",
+                            placeholder: "Name"
                           },
-                          _vm._l(_vm.languages, function(language) {
-                            return _c(
-                              "b-select-option",
-                              {
-                                key: language.id,
-                                attrs: {
-                                  id: "codingLanguage_id",
-                                  value: language.id
-                                }
-                              },
-                              [_vm._v(_vm._s(language.name))]
-                            )
-                          }),
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "addSnippet_sammlung_wrapper col-md-2" },
-                      [
-                        _c("label", { attrs: { for: "sammlung_id" } }, [
-                          _vm._v("Sammlung:")
-                        ]),
+                          model: {
+                            value: _vm.snippet.name,
+                            callback: function($$v) {
+                              _vm.$set(_vm.snippet, "name", $$v)
+                            },
+                            expression: "snippet.name"
+                          }
+                        }),
                         _vm._v(" "),
-                        _c(
-                          "b-select",
-                          {
-                            model: {
-                              value: _vm.snippet.sammlung_id,
-                              callback: function($$v) {
-                                _vm.$set(_vm.snippet, "sammlung_id", $$v)
-                              },
-                              expression: "snippet.sammlung_id"
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.snippet.desc,
+                              expression: "snippet.desc"
                             }
-                          },
-                          _vm._l(_vm.sammlungen, function(sammlung) {
-                            return _c(
-                              "b-select-option",
-                              {
-                                key: sammlung.id,
-                                attrs: { id: "sammlung_id", value: sammlung.id }
-                              },
-                              [_vm._v(_vm._s(sammlung.name))]
-                            )
-                          }),
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "addSnippet_public_wrapper col-md-2" },
-                      [
-                        _c("label", { attrs: { for: "public" } }, [
-                          _vm._v("Public?")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.snippet.public,
-                                expression: "snippet.public"
+                          ],
+                          staticClass: "snippet_desc input-group mb-3",
+                          attrs: { name: "desc", placeholder: "Beschreibung" },
+                          domProps: { value: _vm.snippet.desc },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
                               }
-                            ],
-                            attrs: { id: "public", name: "public" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.snippet,
-                                  "public",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
+                              _vm.$set(_vm.snippet, "desc", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.snippet.content,
+                              expression: "snippet.content"
+                            }
+                          ],
+                          staticClass: "snippet_content input-group mb-3",
+                          attrs: {
+                            name: "snippet_content",
+                            placeholder: "Content"
+                          },
+                          domProps: { value: _vm.snippet.content },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.snippet,
+                                "content",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "container" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "addSnippet_lang_wrapper col-md-3"
+                              },
+                              [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "codingLanguage_id" } },
+                                  [_vm._v("Sprache:")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "b-select",
+                                  {
+                                    model: {
+                                      value: _vm.snippet.language_id,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.snippet,
+                                          "language_id",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "snippet.language_id"
+                                    }
+                                  },
+                                  _vm._l(_vm.languages, function(language) {
+                                    return _c(
+                                      "b-select-option",
+                                      {
+                                        key: language.id,
+                                        attrs: {
+                                          id: "codingLanguage_id",
+                                          value: language.id
+                                        }
+                                      },
+                                      [_vm._v(_vm._s(language.name))]
+                                    )
+                                  }),
+                                  1
                                 )
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { attrs: { value: "0" } }, [
-                              _vm._v("Nein")
-                            ]),
+                              ],
+                              1
+                            ),
                             _vm._v(" "),
-                            _c("option", { attrs: { value: "1" } }, [
-                              _vm._v("Ja")
-                            ])
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "text-center col-md-2" },
-                      [
-                        _c(
-                          "b-button",
-                          {
-                            staticClass: "okbutton",
-                            on: { click: _vm.createSnippet }
-                          },
-                          [_vm._v("Abschicken")]
-                        )
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "addSnippet_sammlung_wrapper col-md-2"
+                              },
+                              [
+                                _c("label", { attrs: { for: "sammlung_id" } }, [
+                                  _vm._v("Sammlung:")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "b-select",
+                                  {
+                                    model: {
+                                      value: _vm.snippet.sammlung_id,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.snippet,
+                                          "sammlung_id",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "snippet.sammlung_id"
+                                    }
+                                  },
+                                  _vm._l(_vm.sammlungen, function(sammlung) {
+                                    return _c(
+                                      "b-select-option",
+                                      {
+                                        key: sammlung.id,
+                                        attrs: {
+                                          id: "sammlung_id",
+                                          value: sammlung.id
+                                        }
+                                      },
+                                      [_vm._v(_vm._s(sammlung.name))]
+                                    )
+                                  }),
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "addSnippet_public_wrapper col-md-2"
+                              },
+                              [
+                                _c("label", { attrs: { for: "public" } }, [
+                                  _vm._v("Public?")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.snippet.public,
+                                        expression: "snippet.public"
+                                      }
+                                    ],
+                                    attrs: { id: "public", name: "public" },
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.$set(
+                                          _vm.snippet,
+                                          "public",
+                                          $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        )
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("option", { attrs: { value: "0" } }, [
+                                      _vm._v("Nein")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("option", { attrs: { value: "1" } }, [
+                                      _vm._v("Ja")
+                                    ])
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "text-center col-md-2" },
+                              [
+                                _c(
+                                  "b-button",
+                                  {
+                                    staticClass: "okbutton",
+                                    on: { click: _vm.createSnippet }
+                                  },
+                                  [_vm._v("Abschicken")]
+                                )
+                              ],
+                              1
+                            )
+                          ])
+                        ])
                       ],
                       1
                     )
-                  ])
-                ])
+                  : _vm._e()
               ],
               1
             )
