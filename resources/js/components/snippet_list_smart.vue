@@ -40,7 +40,7 @@
             this.$store.dispatch('reload_snippets');
 
                 fetch('/getLanguages', {method:'get'
-                })s
+                })
                     .then((response) => {
                         return response.json()
                     })
