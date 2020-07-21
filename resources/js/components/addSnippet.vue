@@ -3,7 +3,8 @@
         <div>
             <h4>Add snippet</h4>
             <div class="write_toggle"  v-on:click="$store.dispatch('change_addSnippetIsHidden')"></div>
-            <b-form-group>
+            <transition name="addSnippetTransition">
+            <b-form-group v-if="!addSnippetIsHidden">
                 <label></label>
                 <b-input type="text" class="addSnippetinput_name" v-model="snippet.name" name="name" placeholder="Name"></b-input>
 
@@ -39,6 +40,7 @@
                     </div>
                 </div>
             </b-form-group>
+            </transition>
         </div>
     </div>
 </template>
@@ -160,5 +162,22 @@
         margig-top:-12px !important;
     }
 
-
+    /* Transitions */
+    .addSnippetTransition-enter-active {
+        animation: quizAnimation .5s;
+    }
+    .addSnippetTransition-leave-active {
+        animation: quizAnimation .5s reverse;
+    }
+    @keyframes addSnippetTransition {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 </style>
