@@ -40,7 +40,7 @@
             this.$store.dispatch('reload_snippets');
 
                 fetch('/getLanguages', {method:'get'
-                })
+                })s
                     .then((response) => {
                         return response.json()
                     })
@@ -264,16 +264,13 @@
     }
     @keyframes add-item {
         0% {
-            opacity: 0;
-            transform: translateX(150px);
+            transform: scale(0);
         }
         50% {
-            opacity: 0.5;
-            transform: translateX(-10px) skewX(20deg);
+            transform: scale(1.5);
         }
         100% {
-            opacity: 1;
-            transform: translateX(0px);
+            transform: scale(1);
         }
     }
 
