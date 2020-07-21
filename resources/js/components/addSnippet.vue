@@ -1,7 +1,7 @@
 <template >
     <div id="addSnippet_bg" v-if="!addSnippetIsHidden">
         <div>
-            <h4>Add snippet Test</h4>
+            <h4>Add snippet Tester</h4>
             <div class="write_toggle"  v-on:click="$store.dispatch('change_addSnippetIsHidden')"></div>
             <transition name="addSnippetTransition">
             <b-form-group v-if="!addSnippetIsHidden">
