@@ -164,10 +164,10 @@
 
     /* Transitions */
     .addSnippetTransition-enter-active {
-        animation: quizAnimation .5s;
+        animation: addSnippetTransition .5s;
     }
     .addSnippetTransition-leave-active {
-        animation: quizAnimation .5s reverse;
+        animation: addSnippetTransition .5s reverse;
     }
     @keyframes addSnippetTransition {
         0% {
